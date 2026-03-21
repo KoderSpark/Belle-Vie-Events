@@ -8,12 +8,13 @@ import babyShowerImg from "@/assets/baby-shower.jpg";
 import birthdayImg from "@/assets/birthday.jpg";
 import bridalImg from "@/assets/bridal-shower.jpg";
 import culturalImg from "@/assets/cultural.jpg";
-
+import cateringImg from "@/assets/catering.png";
 const categories = [
   { title: "Baby Showers", img: babyShowerImg },
   { title: "Milestone Birthdays", img: birthdayImg },
   { title: "Bridal Showers", img: bridalImg },
   { title: "Cultural Celebrations", img: culturalImg },
+  { title: "Luxury Catering", img: cateringImg },
 ];
 
 const testimonials = [

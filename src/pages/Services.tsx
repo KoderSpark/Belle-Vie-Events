@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Palette, Sparkles, PartyPopper, MessageCircle, ClipboardList, CalendarCheck, Truck, ArrowRight } from "lucide-react";
+import { Palette, Sparkles, PartyPopper, MessageCircle, ClipboardList, CalendarCheck, Truck, ArrowRight, Utensils } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import heroImg from "@/assets/hero-event.jpg";
 import babyShowerImg from "@/assets/baby-shower.jpg";
 import bridalImg from "@/assets/bridal-shower.jpg";
-
+import cateringImg from "@/assets/catering.png";
 const services = [
   {
     icon: Palette,
@@ -24,6 +24,12 @@ const services = [
     title: "Specialty Events",
     desc: "Unique celebrations that go beyond the ordinary — gender reveals, milestone anniversaries, proposal setups, and intimate luxury gatherings.",
     img: bridalImg,
+  },
+  {
+    icon: Utensils,
+    title: "Luxury Catering",
+    desc: "Exquisite culinary experiences tailored to your event. From elegant hors d'oeuvres and gourmet plated dinners to magnificent dessert displays.",
+    img: cateringImg,
   },
 ];
 
