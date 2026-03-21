@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
@@ -12,13 +12,29 @@ const navLinks = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { pathname } = useLocation();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const isTop = !scrolled;
+
+  const glassClass = isTop ? "glass-dark" : "glass-strong";
+  const textClass = isTop ? "text-white" : "text-charcoal";
+  const mutedTextClass = isTop ? "text-white/70" : "text-soft-gray";
+  const activeBgClass = isTop ? "bg-white/10" : "bg-[hsl(var(--peach)/0.35)]";
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4">
-      <nav className="flex items-center gap-8 glass-strong rounded-full px-8 py-3 shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4 transition-all duration-500">
+      <nav className={`flex items-center gap-8 ${glassClass} rounded-full px-8 py-3 shadow-sm transition-all duration-500`}>
         {/* Brand */}
-        <Link to="/" className="font-serif text-xl font-semibold tracking-tight text-charcoal mr-4">
+        <Link to="/" className={`font-serif text-xl font-semibold tracking-tight ${textClass} mr-4 transition-colors`}>
           Belle Vie
         </Link>
 
@@ -30,8 +46,8 @@ const Navbar = () => {
                 to={l.to}
                 className={`relative text-sm font-medium tracking-wide px-4 py-2 rounded-full transition-all duration-300 ${
                   pathname === l.to
-                    ? "bg-[hsl(var(--peach)/0.35)] text-charcoal"
-                    : "text-soft-gray hover:text-charcoal"
+                    ? `${activeBgClass} ${textClass}`
+                    : `${mutedTextClass} hover:${textClass}`
                 }`}
               >
                 {l.label}
@@ -43,7 +59,7 @@ const Navbar = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden p-2 text-charcoal"
+          className={`md:hidden p-2 ${textClass} transition-colors`}
           aria-label="Toggle menu"
         >
           {open ? <X size={22} /> : <Menu size={22} />}
@@ -52,7 +68,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {open && (
-        <div className="absolute top-full mt-2 left-4 right-4 md:hidden glass-strong rounded-2xl px-6 pb-5 pt-4 shadow-lg">
+        <div className={`absolute top-full mt-2 left-4 right-4 md:hidden ${glassClass} rounded-2xl px-6 pb-5 pt-4 shadow-lg transition-all`}>
           <ul className="flex flex-col gap-2">
             {navLinks.map((l) => (
               <li key={l.to}>
@@ -61,8 +77,8 @@ const Navbar = () => {
                   onClick={() => setOpen(false)}
                   className={`block text-base font-medium px-4 py-2.5 rounded-xl transition-all duration-200 ${
                     pathname === l.to
-                      ? "bg-[hsl(var(--peach)/0.35)] text-charcoal"
-                      : "text-soft-gray hover:text-charcoal"
+                      ? `${activeBgClass} ${textClass}`
+                      : `${mutedTextClass} hover:${textClass}`
                   }`}
                 >
                   {l.label}

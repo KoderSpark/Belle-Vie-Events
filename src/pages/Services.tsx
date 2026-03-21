@@ -1,187 +1,268 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { Palette, Sparkles, PartyPopper, MessageCircle, ClipboardList, CalendarCheck, Truck, ArrowRight, Utensils } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import { ArrowRight, CheckCircle, BookOpen } from "lucide-react";
 import heroImg from "@/assets/hero-event.jpg";
-import babyShowerImg from "@/assets/baby-shower.jpg";
-import bridalImg from "@/assets/bridal-shower.jpg";
+import welcomeImg from "@/assets/welcome.jpg";
 import cateringImg from "@/assets/catering.png";
-const services = [
-  {
-    icon: Palette,
-    title: "Custom Balloon Styling",
-    desc: "From organic garlands to sculptural arches, every balloon installation is handcrafted to complement your event's palette and personality.",
-    img: heroImg,
-  },
-  {
-    icon: Sparkles,
-    title: "Themed Event Design",
-    desc: "Full-concept design bringing your theme to life — florals, backdrops, tablescapes, and bespoke details woven into a cohesive vision.",
-    img: babyShowerImg,
-  },
-  {
-    icon: PartyPopper,
-    title: "Specialty Events",
-    desc: "Unique celebrations that go beyond the ordinary — gender reveals, milestone anniversaries, proposal setups, and intimate luxury gatherings.",
-    img: bridalImg,
-  },
-  {
-    icon: Utensils,
-    title: "Luxury Catering",
-    desc: "Exquisite culinary experiences tailored to your event. From elegant hors d'oeuvres and gourmet plated dinners to magnificent dessert displays.",
-    img: cateringImg,
-  },
-];
+import bridalImg from "@/assets/bridal-shower.jpg";
+import culturalImg from "@/assets/cultural.jpg";
 
-const steps = [
-  { icon: MessageCircle, title: "Discovery Call", desc: "We learn about your vision, style, and the moments that matter most." },
-  { icon: ClipboardList, title: "Design & Proposal", desc: "A tailored design concept and transparent pricing aligned to your budget." },
-  { icon: CalendarCheck, title: "Refinement", desc: "We perfect every detail together until the vision feels exactly right." },
-  { icon: Truck, title: "Flawless Execution", desc: "Our team handles setup, styling, and breakdown so you simply enjoy." },
-];
+const Services = () => {
+  return (
+    <main className="pb-20 overflow-hidden bg-background">
+      {/* Hero Header */}
+      <header className="relative min-h-[70vh] flex items-center overflow-hidden bg-charcoal mb-24">
+        <div className="absolute inset-0 z-0">
+          <img
+            alt="Luxurious event hosting"
+            className="w-full h-full object-cover opacity-50"
+            src={heroImg}
+          />
+          <div className="absolute inset-0 bg-charcoal/60 mix-blend-multiply"></div>
+        </div>
 
-const Services = () => (
-  <main className="pt-20 overflow-hidden">
-    {/* Hero */}
-    <section className="relative py-32 lg:py-44">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-[-100px] left-[-60px] w-[420px] h-[420px] rounded-full bg-[hsl(var(--lavender)/0.25)] blur-3xl pointer-events-none" />
-        <div className="absolute bottom-[-80px] right-[-60px] w-[380px] h-[380px] rounded-full bg-[hsl(var(--peach)/0.2)] blur-3xl pointer-events-none" />
-      </div>
-      <div className="container mx-auto px-6 relative z-10 text-center">
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-gold mb-6"
-        >
-          What We Offer
-        </motion.p>
-        <motion.h1
-          initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="text-5xl sm:text-6xl lg:text-7xl font-bold text-charcoal leading-[1.05] tracking-tight"
-        >
-          Designed to <span className="gradient-text">Inspire</span>
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-6 text-soft-gray text-lg max-w-xl mx-auto leading-relaxed"
-        >
-          We offer bespoke event design services that turn your vision into an unforgettable, immersive experience.
-        </motion.p>
-      </div>
-    </section>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full py-20 mt-16">
+          <ScrollReveal>
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12">
+              <div className="max-w-2xl">
+                <span className="text-[#c2a15b] font-sans uppercase tracking-[0.2em] text-xs font-semibold mb-4 block">
+                  Our Expertise
+                </span>
+                <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif tracking-tight leading-tight mb-0 text-white">
+                  The Art of <br />
+                  <span className="italic text-[#c2a15b]">Exceptional</span> Hosting
+                </h1>
+              </div>
+              <p className="text-white/70 font-sans text-lg max-w-md pb-2 lg:border-l lg:border-white/20 lg:pl-8 leading-relaxed">
+                A curated suite of services designed for those who believe every gathering
+                is a canvas for storytelling and refined hospitality.
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </header>
 
-    {/* Services — alternating editorial layout */}
-    <section className="pb-12">
-      <div className="container mx-auto px-6 space-y-20 lg:space-y-32">
-        {services.map((s, i) => {
-          const isEven = i % 2 === 0;
-          return (
-            <ScrollReveal key={s.title}>
-              <div className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center ${isEven ? "" : "lg:direction-rtl"}`}>
-                <div className={`${isEven ? "lg:order-1" : "lg:order-2"}`}>
-                  <div className="overflow-hidden rounded-2xl shadow-xl group">
-                    <img
-                      src={s.img}
-                      alt={s.title}
-                      className="w-full h-[320px] lg:h-[400px] object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                    />
-                  </div>
-                </div>
-                <div className={`${isEven ? "lg:order-2" : "lg:order-1"}`}>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full gradient-blush-gold mb-6">
-                    <s.icon size={22} className="text-charcoal" />
-                  </div>
-                  <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight mb-4">{s.title}</h2>
-                  <p className="text-soft-gray leading-relaxed text-base mb-6">{s.desc}</p>
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-gold hover:text-charcoal transition-colors duration-200 group/link"
-                  >
-                    Inquire About This Service
-                    <ArrowRight size={16} className="transition-transform duration-200 group-hover/link:translate-x-1" />
-                  </Link>
-                </div>
+      {/* Service Section 1: Full-Service Event Planning */}
+      <section className="mb-32 lg:mb-40 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12 lg:gap-24">
+          <div className="w-full md:w-1/2 relative">
+            <ScrollReveal direction="left">
+              <div className="aspect-[4/5] bg-card rounded-sm overflow-hidden shadow-sm">
+                <img
+                  alt="Luxury event planning"
+                  className="w-full h-full object-cover"
+                  src={welcomeImg}
+                />
+              </div>
+              {/* Asymmetric Decorative Element */}
+              <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-[#f0eee8] opacity-50 -z-10 rounded-sm" />
+            </ScrollReveal>
+          </div>
+          <div className="w-full md:w-1/2 space-y-8">
+            <ScrollReveal direction="right" delay={0.1}>
+              <div className="inline-flex items-center gap-4 text-[#c2a15b]">
+                <span className="h-[1px] w-8 bg-current"></span>
+                <span className="font-sans uppercase tracking-widest text-xs font-semibold">
+                  Category 01
+                </span>
+              </div>
+              <h2 className="text-4xl font-serif text-charcoal mt-4 mb-6">
+                Full-Service Event Planning
+              </h2>
+              <p className="text-charcoal/70 text-lg leading-relaxed font-sans mb-8">
+                From the initial mood board to the final guest departure, we
+                orchestrate every detail with meticulous precision. Our approach is
+                bespoke, ensuring your unique narrative is woven into the fabric of
+                the event through venue sourcing, logistics, and on-site management.
+              </p>
+              <ul className="space-y-4 pt-4">
+                <li className="flex items-center gap-4 text-charcoal">
+                  <CheckCircle className="text-[#c2a15b] w-5 h-5 flex-shrink-0" />
+                  <span className="font-sans">Curated Venue Selection &amp; Negotiations</span>
+                </li>
+                <li className="flex items-center gap-4 text-charcoal">
+                  <CheckCircle className="text-[#c2a15b] w-5 h-5 flex-shrink-0" />
+                  <span className="font-sans">Comprehensive Vendor Orchestration</span>
+                </li>
+                <li className="flex items-center gap-4 text-charcoal">
+                  <CheckCircle className="text-[#c2a15b] w-5 h-5 flex-shrink-0" />
+                  <span className="font-sans">Seamless Day-of Production Management</span>
+                </li>
+              </ul>
+              <div className="pt-8">
+                <Link
+                  to="/contact"
+                  className="border-b border-[#c2a15b]/40 pb-1 text-[#c2a15b] font-sans font-semibold uppercase tracking-widest text-sm hover:border-[#c2a15b] transition-colors inline-flex items-center gap-2 group"
+                >
+                  Enquire Now
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </div>
             </ScrollReveal>
-          );
-        })}
-      </div>
-    </section>
-
-    {/* Process — visual timeline */}
-    <section className="py-24 lg:py-32 section-gradient-lavender">
-      <div className="container mx-auto px-6">
-        <ScrollReveal>
-          <div className="text-center mb-20">
-            <p className="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-gold mb-4">How It Works</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal">Our Process</h2>
           </div>
-        </ScrollReveal>
+        </div>
+      </section>
 
-        {/* Timeline */}
-        <div className="relative max-w-3xl mx-auto">
-          {/* Vertical line */}
-          <div className="absolute left-6 lg:left-1/2 top-0 bottom-0 w-px bg-[hsl(var(--gold)/0.3)] lg:-translate-x-px" />
+      {/* Service Section 2: Gourmet Catering (Inverted Layout) */}
+      <section className="py-24 bg-[#f6f3ed] mb-32 lg:mb-40">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row-reverse items-center gap-12 lg:gap-24">
+          <div className="w-full md:w-1/2 relative">
+            <ScrollReveal direction="right">
+              <div className="aspect-[16/10] bg-white rounded-sm overflow-hidden shadow-sm">
+                <img
+                  alt="Gourmet Catering"
+                  className="w-full h-full object-cover"
+                  src={cateringImg}
+                />
+              </div>
+              {/* Overlaid small detail image */}
+              <div className="absolute -top-12 -left-12 w-40 h-40 hidden md:block border-4 border-[#f6f3ed] overflow-hidden shadow-lg bg-card z-10">
+                <img
+                  alt="Detail"
+                  className="w-full h-full object-cover"
+                  src={culturalImg}
+                />
+              </div>
+            </ScrollReveal>
+          </div>
+          <div className="w-full md:w-1/2 space-y-8">
+            <ScrollReveal direction="left" delay={0.1}>
+              <div className="inline-flex items-center gap-4 text-[#c2a15b]">
+                <span className="h-[1px] w-8 bg-current"></span>
+                <span className="font-sans uppercase tracking-widest text-xs font-semibold">
+                  Category 02
+                </span>
+              </div>
+              <h2 className="text-4xl font-serif text-charcoal mt-4 mb-6">Gourmet Catering</h2>
+              <p className="text-charcoal/70 text-lg leading-relaxed font-sans mb-8">
+                Gastronomy is the heart of every great host. Our culinary team crafts
+                seasonal menus that are as visually stunning as they are delicious. We
+                prioritize locally sourced ingredients and innovative techniques to
+                create a dining experience that lingers long after the last bite.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+                <div className="p-6 bg-white rounded-sm shadow-sm border border-black/5">
+                  <h4 className="font-serif text-lg mb-2 text-charcoal">Tasting Menus</h4>
+                  <p className="text-sm text-charcoal/60 font-sans leading-relaxed">
+                    Multi-course journeys through seasonal flavors.
+                  </p>
+                </div>
+                <div className="p-6 bg-white rounded-sm shadow-sm border border-black/5">
+                  <h4 className="font-serif text-lg mb-2 text-charcoal">Mixology</h4>
+                  <p className="text-sm text-charcoal/60 font-sans leading-relaxed">
+                    Artisanal cocktails curated for your theme.
+                  </p>
+                </div>
+              </div>
+              <div className="pt-8">
+                <Link
+                  to="/contact"
+                  className="inline-flex bg-charcoal text-[#fcf9f3] px-8 py-4 rounded-sm font-sans font-semibold uppercase tracking-widest text-sm hover:opacity-90 active:scale-95 transition-all"
+                >
+                  Enquire Now
+                </Link>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
 
-          {steps.map((step, i) => {
-            const isLeft = i % 2 === 0;
-            return (
-              <ScrollReveal key={step.title} delay={i * 0.1}>
-                <div className={`relative flex items-start gap-6 mb-16 last:mb-0 ${isLeft ? "lg:flex-row" : "lg:flex-row-reverse"}`}>
-                  {/* Content */}
-                  <div className={`flex-1 pl-16 lg:pl-0 ${isLeft ? "lg:pr-16 lg:text-right" : "lg:pl-16 lg:text-left"}`}>
-                    <span className="font-sans text-xs font-bold text-gold uppercase tracking-wider">Step {i + 1}</span>
-                    <h3 className="font-serif text-xl font-semibold text-charcoal mt-2 mb-2">{step.title}</h3>
-                    <p className="text-soft-gray text-sm leading-relaxed">{step.desc}</p>
-                  </div>
-
-                  {/* Circle */}
-                  <div className="absolute left-0 lg:left-1/2 lg:-translate-x-1/2 flex-shrink-0 flex h-12 w-12 items-center justify-center rounded-full gradient-blush-gold shadow-md z-10">
-                    <step.icon size={20} className="text-charcoal" />
-                  </div>
-
-                  {/* Spacer for opposite side on desktop */}
-                  <div className="hidden lg:block flex-1" />
+      {/* Service Section 3: Exquisite Floral Design */}
+      <section className="mb-32 lg:mb-40">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row gap-12 lg:gap-16 items-start">
+            <div className="w-full md:w-1/3 space-y-8">
+              <ScrollReveal direction="up">
+                <div className="inline-flex items-center gap-4 text-[#c2a15b]">
+                  <span className="h-[1px] w-8 bg-current"></span>
+                  <span className="font-sans uppercase tracking-widest text-xs font-semibold">
+                    Category 03
+                  </span>
+                </div>
+                <h2 className="text-4xl font-serif text-charcoal mt-4 mb-6">
+                  Exquisite Floral Design
+                </h2>
+                <p className="text-charcoal/70 text-lg leading-relaxed font-sans mb-8">
+                  Our floral arrangements are more than decorations; they are living
+                  sculptures that define the atmosphere. Using rare blooms and
+                  architectural greenery, we create immersive environments that
+                  captivate the senses.
+                </p>
+                <div className="pt-4">
+                  <Link
+                    to="/gallery"
+                    className="border-b border-[#c2a15b]/40 pb-1 text-[#c2a15b] font-sans font-semibold uppercase tracking-widest text-sm hover:border-[#c2a15b] transition-colors inline-flex items-center gap-2 group"
+                  >
+                    Explore Portfolio
+                    <BookOpen className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+                <div className="mt-12 p-8 border border-charcoal/10 rounded-sm bg-[#fbf9f6]/50">
+                  <p className="italic font-serif text-xl text-charcoal leading-relaxed">
+                    "The flowers were not just part of the room; they were the
+                    conversation itself."
+                  </p>
+                  <p className="mt-4 font-sans uppercase tracking-[0.15em] text-xs text-[#c2a15b] font-semibold">
+                    — Julianne V., Private Client
+                  </p>
                 </div>
               </ScrollReveal>
-            );
-          })}
+            </div>
+            <div className="w-full md:w-2/3 grid grid-cols-2 gap-4 sm:gap-6">
+              <ScrollReveal direction="up" delay={0.1}>
+                <div className="aspect-[3/4] overflow-hidden rounded-sm shadow-sm bg-card col-span-1 md:mt-12">
+                  <img
+                    alt="Floral Design 1"
+                    className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+                    src={bridalImg}
+                  />
+                </div>
+              </ScrollReveal>
+              <ScrollReveal direction="up" delay={0.2}>
+                <div className="aspect-[3/4] overflow-hidden rounded-sm shadow-sm bg-card col-span-1">
+                  <img
+                    alt="Floral Design 2"
+                    className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+                    src={heroImg}
+                  />
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    {/* CTA */}
-    <section className="py-24 lg:py-32">
-      <div className="container mx-auto px-6">
+      {/* Final Call to Action */}
+      <section className="max-w-7xl mx-auto px-6 lg:px-8 mb-32 lg:mb-40">
         <ScrollReveal>
-          <div className="relative overflow-hidden gradient-blush-gold rounded-3xl px-8 py-20 sm:px-16 sm:py-24 text-center">
-            <div className="absolute top-[-60px] right-[-40px] w-64 h-64 rounded-full bg-[hsl(var(--lavender)/0.4)] blur-3xl pointer-events-none" />
-            <div className="absolute bottom-[-60px] left-[-40px] w-72 h-72 rounded-full bg-[hsl(var(--gold)/0.2)] blur-3xl pointer-events-none" />
-            <div className="relative z-10">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal mb-4 leading-tight">
-                Have Something Special in Mind?
-              </h2>
-              <p className="text-charcoal/60 mb-10 max-w-md mx-auto text-base sm:text-lg">
-                We love bringing unique visions to life. Let's chat about yours.
-              </p>
+          <div className="bg-[#f0eee8] p-10 md:p-24 text-center rounded-xl relative overflow-hidden">
+            <div className="absolute inset-0 bg-[#c2a15b] opacity-[0.03] pointer-events-none"></div>
+            <h2 className="text-4xl md:text-5xl font-serif text-charcoal mb-6 relative z-10">
+              Begin Your Journey
+            </h2>
+            <p className="text-charcoal/70 font-sans text-lg max-w-xl mx-auto mb-10 relative z-10 leading-relaxed">
+              Whether it's an intimate dinner or a grand celebration, let us curate an
+              experience that reflects your vision.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
               <Link
                 to="/contact"
-                className="inline-flex rounded-full bg-card px-10 py-4 text-base font-semibold text-charcoal shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.03] active:scale-[0.97]"
+                className="bg-charcoal text-[#fcf9f3] px-10 py-4 rounded-sm font-sans font-semibold uppercase tracking-widest text-sm hover:opacity-90 transition-all text-center border border-charcoal block"
               >
-                Get in Touch
+                Request a Proposal
+              </Link>
+              <Link
+                to="/services"
+                className="border border-charcoal/20 text-charcoal px-10 py-4 rounded-sm font-sans font-semibold uppercase tracking-widest text-sm hover:bg-white/50 transition-all text-center block"
+              >
+                View Packages
               </Link>
             </div>
           </div>
         </ScrollReveal>
-      </div>
-    </section>
-  </main>
-);
+      </section>
+    </main>
+  );
+};
 
 export default Services;

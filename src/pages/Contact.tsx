@@ -1,8 +1,9 @@
 import { useState, type FormEvent } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "sonner";
-import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, ChevronRight, ChevronLeft } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import heroImg from "@/assets/hero-event.jpg";
 
 const eventTypes = ["Baby Shower", "Birthday", "Bridal Shower", "Wedding", "Cultural Celebration", "Corporate Event", "Other"];
 const budgets = ["Under $500", "$500 – $1,000", "$1,000 – $2,500", "$2,500 – $5,000", "$5,000+"];
@@ -15,172 +16,235 @@ const contactInfo = [
 ];
 
 const Contact = () => {
+  const [step, setStep] = useState(1);
   const [submitting, setSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    eventType: "",
+    date: "",
+    guests: "",
+    budget: "",
+    location: "",
+    theme: "",
+    inspiration: "",
+    message: ""
+  });
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const nextStep = () => {
+    if (step < 3) setStep(step + 1);
+  };
+
+  const prevStep = () => {
+    if (step > 1) setStep(step - 1);
+  };
+
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
     setTimeout(() => {
       setSubmitting(false);
-      toast.success("Your inquiry has been sent! We'll be in touch within 24 hours.");
-      (e.target as HTMLFormElement).reset();
-    }, 1200);
+      toast.success("Enquiry sent! We'll reach out within 24 hours.");
+      setStep(1);
+      setFormData({
+        name: "", email: "", phone: "", eventType: "", date: "",
+        guests: "", budget: "", location: "", theme: "",
+        inspiration: "", message: ""
+      });
+    }, 1500);
   };
 
   const inputClass =
-    "w-full rounded-xl border border-border bg-card/80 px-4 py-3.5 text-sm text-charcoal placeholder:text-soft-gray/50 focus:outline-none focus:ring-2 focus:ring-[hsl(var(--blush)/0.5)] focus:border-transparent transition-all duration-200";
+    "w-full bg-transparent border-b border-charcoal/20 py-4 text-lg text-charcoal placeholder:text-charcoal/30 focus:outline-none focus:border-[#c2a15b] transition-all duration-300 font-sans";
+
+  const stepLabels = ["The Basics", "The Celebration", "The Vision"];
 
   return (
-    <main className="pt-20 overflow-hidden">
-      {/* Hero */}
-      <section className="relative py-32 lg:py-40">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-[-100px] right-[-80px] w-[480px] h-[480px] rounded-full bg-[hsl(var(--blush)/0.2)] blur-3xl pointer-events-none" />
-          <div className="absolute bottom-[-80px] left-[-60px] w-[400px] h-[400px] rounded-full bg-[hsl(var(--lavender)/0.15)] blur-3xl pointer-events-none" />
+    <main className="pb-20 overflow-hidden bg-[#fbf9f6]">
+      {/* Hero Header */}
+      <header className="relative min-h-[50vh] flex items-center overflow-hidden bg-charcoal">
+        <div className="absolute inset-0 z-0">
+          <img alt="Contact" className="w-full h-full object-cover opacity-40" src={heroImg} />
+          <div className="absolute inset-0 bg-charcoal/40 mix-blend-multiply"></div>
         </div>
-        <div className="container mx-auto px-6 relative z-10 text-center">
+
+        <div className="container mx-auto px-6 relative z-10 py-20 mt-16 text-center">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-gold mb-6"
+            className="font-sans text-[10px] font-semibold uppercase tracking-[0.4em] text-[#c2a15b] mb-6"
           >
-            Get in Touch
+            Connect With Us
           </motion.p>
           <motion.h1
-            initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-charcoal leading-[1.05] tracking-tight"
-          >
-            Let's Start <span className="gradient-text">Planning</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-6 text-soft-gray text-lg max-w-xl mx-auto leading-relaxed"
+            className="text-5xl md:text-7xl font-serif text-white leading-tight"
           >
-            Tell us about your dream event and we'll craft something extraordinary together.
-          </motion.p>
+            Let's Start <span className="italic font-normal">Planning</span>
+          </motion.h1>
         </div>
-      </section>
+      </header>
 
-      {/* Contact info cards + Form */}
-      <section className="pb-24 lg:pb-32">
+      <section className="py-24 lg:py-32">
         <div className="container mx-auto px-6">
-          {/* Info cards */}
-          <ScrollReveal>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
-              {contactInfo.map((c, i) => (
-                <motion.div
-                  key={c.label}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.08 }}
-                  className="glass rounded-2xl p-6 text-center group hover:shadow-lg transition-shadow duration-300"
-                >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full gradient-blush-gold mx-auto mb-3 transition-transform duration-200 group-hover:scale-110">
-                    <c.icon size={18} className="text-charcoal" />
+          <div className="max-w-5xl mx-auto grid lg:grid-cols-12 gap-20">
+            
+            {/* Left: Info & Progress */}
+            <div className="lg:col-span-4 space-y-12">
+              <ScrollReveal>
+                <div className="space-y-8">
+                  <h2 className="font-serif text-3xl text-charcoal">Enquiry <br/>Stage</h2>
+                  
+                  {/* Custom Progress Indicator */}
+                  <div className="space-y-6 pt-4">
+                    {stepLabels.map((label, i) => (
+                      <div key={label} className="flex items-center gap-4">
+                        <div className={`w-8 h-8 rounded-full border flex items-center justify-center text-[10px] font-bold transition-all duration-500 ${
+                          step === i + 1 ? 'border-[#c2a15b] bg-[#c2a15b] text-white shadow-lg' : 
+                          step > i + 1 ? 'border-charcoal bg-charcoal text-white' : 'border-charcoal/20 text-charcoal/30'
+                        }`}>
+                          {i + 1}
+                        </div>
+                        <span className={`font-sans text-[11px] uppercase tracking-widest font-semibold transition-colors duration-500 ${
+                          step === i + 1 ? 'text-charcoal' : 'text-charcoal/30'
+                        }`}>
+                          {label}
+                        </span>
+                      </div>
+                    ))}
                   </div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-soft-gray mb-1">{c.label}</p>
-                  <p className="text-sm font-medium text-charcoal">{c.value}</p>
-                </motion.div>
-              ))}
-            </div>
-          </ScrollReveal>
-
-          {/* Form */}
-          <ScrollReveal>
-            <div className="max-w-4xl mx-auto">
-              <div className="relative glass rounded-3xl p-8 sm:p-12 shadow-lg overflow-hidden">
-                {/* Decorative corner */}
-                <div className="absolute top-0 right-0 w-48 h-48 gradient-blush-gold opacity-20 rounded-bl-[100px] pointer-events-none" />
-
-                <div className="relative z-10">
-                  <h2 className="font-serif text-2xl sm:text-3xl font-bold text-charcoal mb-2">Event Inquiry</h2>
-                  <p className="text-soft-gray text-sm mb-10">Fields marked with * are required</p>
-
-                  <form onSubmit={handleSubmit}>
-                    <div className="grid sm:grid-cols-2 gap-x-6 gap-y-5">
-                      <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-soft-gray mb-2">Name *</label>
-                        <input required type="text" placeholder="Your full name" className={inputClass} />
-                      </div>
-                      <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-soft-gray mb-2">Email *</label>
-                        <input required type="email" placeholder="you@example.com" className={inputClass} />
-                      </div>
-                      <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-soft-gray mb-2">Phone</label>
-                        <input type="tel" placeholder="(555) 123-4567" className={inputClass} />
-                      </div>
-                      <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-soft-gray mb-2">Event Type *</label>
-                        <select required className={inputClass}>
-                          <option value="">Select event type</option>
-                          {eventTypes.map((t) => (
-                            <option key={t} value={t}>{t}</option>
-                          ))}
-                        </select>
-                      </div>
-                      <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-soft-gray mb-2">Event Date</label>
-                        <input type="date" className={inputClass} />
-                      </div>
-                      <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-soft-gray mb-2">Location</label>
-                        <input type="text" placeholder="Venue or city" className={inputClass} />
-                      </div>
-                      <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-soft-gray mb-2">Guest Count</label>
-                        <input type="number" placeholder="Approximate guests" className={inputClass} />
-                      </div>
-                      <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-soft-gray mb-2">Budget</label>
-                        <select className={inputClass}>
-                          <option value="">Select budget range</option>
-                          {budgets.map((b) => (
-                            <option key={b} value={b}>{b}</option>
-                          ))}
-                        </select>
-                      </div>
-                      <div className="sm:col-span-2">
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-soft-gray mb-2">Theme / Colors</label>
-                        <input type="text" placeholder="e.g. Blush & gold, tropical vibes" className={inputClass} />
-                      </div>
-                      <div className="sm:col-span-2">
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-soft-gray mb-2">Pinterest / Inspiration Link</label>
-                        <input type="url" placeholder="https://pinterest.com/..." className={inputClass} />
-                      </div>
-                      <div className="sm:col-span-2">
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-soft-gray mb-2">Message</label>
-                        <textarea rows={4} placeholder="Tell us more about your vision…" className={inputClass} />
-                      </div>
-                    </div>
-
-                    <div className="mt-10 flex justify-center">
-                      <button
-                        type="submit"
-                        disabled={submitting}
-                        className="btn-gradient rounded-full px-12 py-4 text-base font-semibold text-charcoal disabled:opacity-60 inline-flex items-center gap-2"
-                      >
-                        {submitting ? (
-                          "Sending…"
-                        ) : (
-                          <>
-                            Send Inquiry
-                            <Send size={16} />
-                          </>
-                        )}
-                      </button>
-                    </div>
-                  </form>
                 </div>
+
+                <div className="pt-20 space-y-8 hidden lg:block">
+                  {contactInfo.map((info) => (
+                    <div key={info.label} className="flex items-start gap-4">
+                      <div className="mt-1 p-2 bg-charcoal/[0.03] rounded-sm">
+                        <info.icon size={16} className="text-[#c2a15b]" />
+                      </div>
+                      <div>
+                        <p className="text-[10px] font-bold uppercase tracking-widest text-charcoal/30 mb-1">{info.label}</p>
+                        <p className="text-sm font-medium text-charcoal">{info.value}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </ScrollReveal>
+            </div>
+
+            {/* Right: Interactive Form */}
+            <div className="lg:col-span-8">
+              <div className="bg-white p-8 md:p-16 rounded-sm shadow-sm border border-charcoal/5 min-h-[600px] flex flex-col relative overflow-hidden">
+                <form onSubmit={handleSubmit} className="flex-1 flex flex-col">
+                  <AnimatePresence mode="wait">
+                    {step === 1 && (
+                      <motion.div
+                        key="step1"
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -20 }}
+                        className="space-y-10 flex-1"
+                      >
+                        <div className="space-y-2">
+                          <h3 className="font-serif text-2xl text-charcoal">Who shall we speak with?</h3>
+                          <p className="text-charcoal/40 text-sm">Tell us who you are so we can address you personally.</p>
+                        </div>
+                        <div className="space-y-8">
+                          <input required name="name" value={formData.name} onChange={handleInputChange} placeholder="Your full name" className={inputClass} />
+                          <input required name="email" value={formData.email} onChange={handleInputChange} type="email" placeholder="Email address" className={inputClass} />
+                          <input name="phone" value={formData.phone} onChange={handleInputChange} type="tel" placeholder="Phone number (optional)" className={inputClass} />
+                        </div>
+                      </motion.div>
+                    )}
+
+                    {step === 2 && (
+                      <motion.div
+                        key="step2"
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -20 }}
+                        className="space-y-10 flex-1"
+                      >
+                        <div className="space-y-2">
+                          <h3 className="font-serif text-2xl text-charcoal">The Celebration</h3>
+                          <p className="text-charcoal/40 text-sm">Help us understand the scale and style of your event.</p>
+                        </div>
+                        <div className="grid md:grid-cols-2 gap-10">
+                          <div className="space-y-2">
+                            <label className="text-[10px] font-bold uppercase tracking-widest text-charcoal/40">Event Type</label>
+                            <select name="eventType" value={formData.eventType} onChange={handleInputChange} className={inputClass}>
+                              <option value="">Select an option</option>
+                              {eventTypes.map(t => <option key={t} value={t}>{t}</option>)}
+                            </select>
+                          </div>
+                          <div className="space-y-2">
+                            <label className="text-[10px] font-bold uppercase tracking-widest text-charcoal/40">Desired Date</label>
+                            <input name="date" value={formData.date} onChange={handleInputChange} type="date" className={inputClass} />
+                          </div>
+                          <div className="space-y-2">
+                            <label className="text-[10px] font-bold uppercase tracking-widest text-charcoal/40">Guest Count</label>
+                            <input name="guests" value={formData.guests} onChange={handleInputChange} type="number" placeholder="Approx. guests" className={inputClass} />
+                          </div>
+                          <div className="space-y-2">
+                            <label className="text-[10px] font-bold uppercase tracking-widest text-charcoal/40">Investment / Budget</label>
+                            <select name="budget" value={formData.budget} onChange={handleInputChange} className={inputClass}>
+                              <option value="">Select range</option>
+                              {budgets.map(b => <option key={b} value={b}>{b}</option>)}
+                            </select>
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+
+                    {step === 3 && (
+                      <motion.div
+                        key="step3"
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -20 }}
+                        className="space-y-10 flex-1"
+                      >
+                        <div className="space-y-2">
+                          <h3 className="font-serif text-2xl text-charcoal">The Vision</h3>
+                          <p className="text-charcoal/40 text-sm">Every detail counts. Share your inspiration with us.</p>
+                        </div>
+                        <div className="space-y-8">
+                          <input name="location" value={formData.location} onChange={handleInputChange} placeholder="Planned location / Venue" className={inputClass} />
+                          <input name="theme" value={formData.theme} onChange={handleInputChange} placeholder="Theme or color palette (e.g. Blush & Gold)" className={inputClass} />
+                          <textarea name="message" value={formData.message} onChange={handleInputChange} rows={3} placeholder="Tell us more about your dream event..." className={inputClass} />
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+
+                  {/* Navigation Buttons */}
+                  <div className="mt-16 pt-8 border-t border-charcoal/5 flex justify-between items-center">
+                    {step > 1 ? (
+                      <button type="button" onClick={prevStep} className="flex items-center gap-2 font-sans text-[10px] font-bold uppercase tracking-widest text-charcoal/40 hover:text-charcoal transition-colors">
+                        <ChevronLeft size={14} /> Back
+                      </button>
+                    ) : <div />}
+
+                    {step < 3 ? (
+                      <button type="button" onClick={nextStep} className="bg-charcoal text-white px-8 py-3 rounded-sm flex items-center gap-3 font-sans text-[10px] font-bold uppercase tracking-widest hover:bg-[#c2a15b] transition-all duration-300 shadow-md">
+                        Continue <ChevronRight size={14} />
+                      </button>
+                    ) : (
+                      <button type="submit" disabled={submitting} className="bg-[#c2a15b] text-white px-8 py-3 rounded-sm flex items-center gap-3 font-sans text-[10px] font-bold uppercase tracking-widest hover:bg-charcoal transition-all duration-300 shadow-lg disabled:opacity-50">
+                        {submitting ? "Sending..." : <>Complete Inquiry <Send size={14} /></>}
+                      </button>
+                    )}
+                  </div>
+                </form>
               </div>
             </div>
-          </ScrollReveal>
+          </div>
         </div>
       </section>
     </main>

@@ -1,50 +1,52 @@
 import { useState } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
-import babyShowerImg from "@/assets/baby-shower.jpg";
-import birthdayImg from "@/assets/birthday.jpg";
-import bridalImg from "@/assets/bridal-shower.jpg";
-import culturalImg from "@/assets/cultural.jpg";
-import heroImg from "@/assets/hero-event.jpg";
+import { galleryImages, galleryFilters } from "@/data/data";
 import welcomeImg from "@/assets/welcome.jpg";
 
-const images = [
-  { src: babyShowerImg, cat: "Baby Showers", alt: "Baby shower balloon decor" },
-  { src: birthdayImg, cat: "Birthdays", alt: "Birthday celebration setup" },
-  { src: bridalImg, cat: "Bridal", alt: "Bridal shower event" },
-  { src: culturalImg, cat: "Cultural", alt: "Cultural celebration" },
-  { src: heroImg, cat: "Balloons", alt: "Grand balloon arch" },
-  { src: welcomeImg, cat: "Balloons", alt: "Welcome event display" },
-];
-
-const filters = ["All", "Balloons", "Birthdays", "Baby Showers", "Bridal", "Cultural"];
-
 const Gallery = () => {
-  const [active, setActive] = useState("All");
+  const [active, setActive] = useState("ALL EVENTS");
   const [lightbox, setLightbox] = useState<string | null>(null);
 
-  const filtered = active === "All" ? images : images.filter((img) => img.cat === active);
+  const filtered = active === "ALL EVENTS" ? galleryImages : galleryImages.filter((img) => img.category === active);
 
   return (
-    <main className="pt-24 overflow-hidden">
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-6">
+    <main className="pb-24 overflow-hidden">
+      {/* Hero Header */}
+      <header className="relative min-h-[60vh] flex items-center overflow-hidden bg-charcoal mb-16">
+        <div className="absolute inset-0 z-0">
+          <img
+            alt="Gallery background"
+            className="w-full h-full object-cover opacity-40"
+            src={welcomeImg}
+          />
+          <div className="absolute inset-0 bg-charcoal/60 mix-blend-multiply"></div>
+        </div>
+
+        <div className="relative z-10 container mx-auto px-6 max-w-5xl text-center py-20 mt-16">
           <ScrollReveal>
-            <p className="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-gold mb-4 text-center">Portfolio</p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-charcoal text-center leading-[1.1]">Our Gallery</h1>
-            <div className="gold-divider mx-auto mt-8 max-w-[120px]" />
+            <p className="font-sans text-[10px] sm:text-xs font-semibold uppercase tracking-[0.3em] text-[#c2a15b] mb-6">
+              Archive of Excellence
+            </p>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-sans text-white leading-tight mb-8">
+              Curated <span className="font-serif italic font-normal text-[#c2a15b]">Moments</span>
+            </h1>
+            <p className="text-white/70 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+              A visual journey through our most distinguished celebrations, from intimate
+              soirees to grand galas. Each event is a testament to the art of hosting.
+            </p>
           </ScrollReveal>
 
           {/* Filters */}
           <ScrollReveal delay={0.15}>
-            <div className="flex flex-wrap justify-center gap-3 mt-12">
-              {filters.map((f) => (
+            <div className="flex flex-wrap justify-center gap-6 sm:gap-10 mt-16">
+              {galleryFilters.map((f) => (
                 <button
                   key={f}
                   onClick={() => setActive(f)}
-                  className={`rounded-full px-5 py-2 text-sm font-medium transition-all duration-200 active:scale-95 ${
+                  className={`pb-2 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.15em] transition-all duration-300 ${
                     active === f
-                      ? "btn-gradient text-charcoal shadow-sm"
-                      : "bg-card text-soft-gray hover:text-charcoal shadow-sm"
+                      ? "text-[#c2ab87] border-b border-[#c2ab87]"
+                      : "text-white/40 hover:text-white/80 border-b border-transparent"
                   }`}
                 >
                   {f}
@@ -53,28 +55,26 @@ const Gallery = () => {
             </div>
           </ScrollReveal>
         </div>
-      </section>
+      </header>
 
       {/* Grid */}
-      <section className="pb-24">
-        <div className="container mx-auto px-6">
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+      <section>
+        <div className="container mx-auto px-6 max-w-6xl">
+          {/* Changed from columns to CSS grid for perfect squares with gap */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
             {filtered.map((img, i) => (
-              <ScrollReveal key={img.src + img.cat + i} delay={(i % 3) * 0.08}>
+              <ScrollReveal key={img.src + img.category + i} delay={(i % 3) * 0.08}>
                 <button
                   onClick={() => setLightbox(img.src)}
-                  className="group relative block w-full overflow-hidden rounded-xl shadow-md break-inside-avoid focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                  className="group relative block w-full aspect-square overflow-hidden bg-charcoal/5 focus:outline-none"
                 >
                   <img
                     src={img.src}
                     alt={img.alt}
-                    className="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/30 transition-colors duration-300 flex items-end justify-start p-5">
-                    <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-card font-serif text-sm font-medium">
-                      {img.cat}
-                    </span>
-                  </div>
+                  {/* Subtle overlay */}
+                  <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/10 transition-colors duration-500" />
                 </button>
               </ScrollReveal>
             ))}
@@ -85,13 +85,13 @@ const Gallery = () => {
       {/* Lightbox */}
       {lightbox && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-charcoal/80 backdrop-blur-sm p-6 cursor-pointer"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-background/95 backdrop-blur-sm p-6 cursor-pointer"
           onClick={() => setLightbox(null)}
         >
           <img
             src={lightbox}
             alt="Gallery preview"
-            className="max-h-[85vh] max-w-full rounded-xl shadow-2xl object-contain"
+            className="max-h-[90vh] max-w-full shadow-2xl object-contain"
           />
         </div>
       )}

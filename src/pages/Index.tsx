@@ -1,200 +1,246 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { Star } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import { ArrowRight, Sparkles, Utensils, Star } from "lucide-react";
 import heroImg from "@/assets/hero-event.jpg";
 import welcomeImg from "@/assets/welcome.jpg";
-import babyShowerImg from "@/assets/baby-shower.jpg";
-import birthdayImg from "@/assets/birthday.jpg";
 import bridalImg from "@/assets/bridal-shower.jpg";
-import culturalImg from "@/assets/cultural.jpg";
 import cateringImg from "@/assets/catering.png";
-const categories = [
-  { title: "Baby Showers", img: babyShowerImg },
-  { title: "Milestone Birthdays", img: birthdayImg },
-  { title: "Bridal Showers", img: bridalImg },
-  { title: "Cultural Celebrations", img: culturalImg },
-  { title: "Luxury Catering", img: cateringImg },
-];
+import culturalImg from "@/assets/cultural.jpg";
+import { galleryImages } from "@/data/data";
 
-const testimonials = [
-  { name: "Amara Okonkwo", text: "Belle Vie turned our daughter's first birthday into an absolute dream. Every detail was beyond anything I could have imagined.", rating: 5 },
-  { name: "Sophie Laurent", text: "Working with this team felt effortless. They brought a vision to life I didn't even know I had. Pure magic.", rating: 5 },
-  { name: "Priya Mehta", text: "Our cultural celebration was handled with such care and respect for tradition while still feeling modern and luxurious.", rating: 5 },
-];
+const Index = () => {
+  const featuredEvents = galleryImages.filter(img => img.featured);
 
-const Index = () => (
-  <main className="overflow-hidden">
-    {/* Hero */}
-    <section className="relative min-h-screen flex items-center justify-center">
-      <div className="absolute inset-0">
-        <img src={heroImg} alt="Luxury balloon and floral event setup" className="h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/30 to-background" />
-      </div>
-      <div className="relative z-10 text-center px-6 max-w-3xl mx-auto pt-20">
-        <motion.h1
-          initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight text-charcoal"
-        >
-          Beautifully Curated Moments.
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-6 text-lg sm:text-xl text-soft-gray max-w-xl mx-auto leading-relaxed"
-        >
-          Custom balloon styling and luxury event decor for your most cherished milestones.
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-8"
-        >
-          <Link
-            to="/contact"
-            className="btn-gradient inline-flex rounded-full px-8 py-3.5 text-base font-semibold text-charcoal"
-          >
-            Inquire Now
-          </Link>
-        </motion.div>
-      </div>
-    </section>
-
-    {/* Welcome */}
-    <section className="section-gradient-blush py-24 lg:py-32">
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <ScrollReveal direction="left">
-            <div className="overflow-hidden rounded-xl shadow-lg">
-              <img src={welcomeImg} alt="Elegant event welcome area" className="w-full h-auto object-cover" />
-            </div>
-          </ScrollReveal>
-          <ScrollReveal direction="right" delay={0.1}>
-            <div>
-              <p className="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-gold mb-4">Welcome to Belle Vie</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-charcoal leading-tight">Where Every Detail Tells a Story</h2>
-              <div className="gold-divider my-6 max-w-[80px]" />
-              <p className="text-soft-gray leading-relaxed mb-4">
-                We believe that life's most beautiful moments deserve an extraordinary setting. From intimate gatherings to grand celebrations, Belle Vie crafts immersive experiences that reflect your unique story.
-              </p>
-              <p className="text-soft-gray leading-relaxed">
-                With a passion for color, texture, and artful design, we transform ordinary spaces into breathtaking environments that linger in memory long after the last guest departs.
-              </p>
-            </div>
-          </ScrollReveal>
+  return (
+    <main className="bg-background text-charcoal font-sans selection:bg-[#c2a15b]/20">
+      {/* Grand Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-charcoal">
+        <div className="absolute inset-0 z-0">
+          <img
+            alt="Luxurious event hall with long tables and elegant lighting"
+            className="w-full h-full object-cover opacity-50"
+            src={heroImg}
+          />
+          <div className="absolute inset-0 bg-charcoal/60 mix-blend-multiply"></div>
         </div>
-      </div>
-    </section>
-
-    {/* Categories */}
-    <section className="py-24 lg:py-32">
-      <div className="container mx-auto px-6">
-        <ScrollReveal>
-          <div className="text-center mb-16">
-            <p className="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-gold mb-4">Our Specialties</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-charcoal">Featured Categories</h2>
-          </div>
-        </ScrollReveal>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {categories.map((cat, i) => (
-            <ScrollReveal key={cat.title} delay={i * 0.08}>
-              <Link to="/gallery" className="group relative block overflow-hidden rounded-xl aspect-[3/4] shadow-md">
-                <img
-                  src={cat.img}
-                  alt={cat.title}
-                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <h3 className="text-lg font-semibold text-card font-serif">{cat.title}</h3>
-                </div>
+        <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center mt-20">
+          <ScrollReveal>
+            <span className="font-sans text-[#c2a15b] uppercase tracking-[0.4em] text-xs font-semibold mb-8 block">
+              Exclusivity Redefined
+            </span>
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-[5.5rem] text-white tracking-tight leading-none mb-12 drop-shadow-lg max-w-6xl mx-auto">
+              Exquisite Moments. <span className="italic font-normal">Timeless Design.</span>
+            </h1>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8">
+              <Link
+                to="/contact"
+                className="bg-[#c2a15b] text-white px-10 py-4 rounded-sm font-sans tracking-widest uppercase text-sm font-semibold hover:opacity-90 transition-all border border-[#c2a15b]"
+              >
+                Inquire Now
               </Link>
-            </ScrollReveal>
-          ))}
+              <Link
+                to="/gallery"
+                className="font-sans text-[#c2a15b] border-b border-[#c2a15b]/40 pb-1 tracking-widest uppercase text-sm font-semibold hover:border-[#c2a15b] transition-all"
+              >
+                View Portfolio
+              </Link>
+            </div>
+          </ScrollReveal>
         </div>
-      </div>
-    </section>
+      </section>
 
-    {/* Testimonials */}
-    <section className="section-gradient-lavender py-24 lg:py-32">
-      <div className="container mx-auto px-6">
-        <ScrollReveal>
-          <div className="text-center mb-16">
-            <p className="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-gold mb-4">Kind Words</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-charcoal">What Our Clients Say</h2>
-          </div>
-        </ScrollReveal>
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((t, i) => (
-            <ScrollReveal key={t.name} delay={i * 0.1}>
-              <div className="glass rounded-xl p-8 shadow-sm h-full flex flex-col">
-                <div className="flex gap-1 mb-4">
-                  {Array.from({ length: t.rating }).map((_, j) => (
-                    <Star key={j} size={16} className="fill-gold text-gold" />
-                  ))}
-                </div>
-                <p className="text-soft-gray leading-relaxed flex-1 italic">"{t.text}"</p>
-                <p className="mt-6 font-serif font-semibold text-charcoal">{t.name}</p>
+      {/* Single Row Quote Section */}
+      <section className="py-24 bg-[#fbf9f6] border-y border-charcoal/5">
+        <div className="container mx-auto px-6 text-center">
+          <ScrollReveal>
+            <div className="max-w-6xl mx-auto flex flex-col items-center gap-6">
+              <div className="w-12 h-[1px] bg-[#c2a15b]/40"></div>
+              <p className="font-serif text-2xl md:text-3xl lg:text-5xl text-charcoal/80 leading-relaxed italic tracking-wide">
+                Luxury is in the details.
+              </p>
+              <div className="w-12 h-[1px] bg-[#c2a15b]/40"></div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Our Story Section (Asymmetry) */}
+      <section className="py-24 lg:py-32 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="md:col-span-5 relative">
+            <ScrollReveal direction="right">
+              <div className="aspect-[4/5] bg-background p-3 sm:p-4 rounded-sm shadow-xl">
+                <img
+                  alt="Event planning team discussing details"
+                  className="w-full h-full object-cover"
+                  src={welcomeImg}
+                />
+              </div>
+              <div className="absolute -bottom-8 sm:-bottom-12 -right-8 sm:-right-12 hidden md:block w-48 sm:w-64 h-64 sm:h-80 bg-white p-2 sm:p-3 rounded-sm shadow-2xl z-10">
+                <img
+                  alt="Elegant table setting close up"
+                  className="w-full h-full object-cover"
+                  src={bridalImg}
+                />
               </div>
             </ScrollReveal>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* CTA */}
-    <section className="py-24 lg:py-32">
-      <div className="container mx-auto px-6">
-        <ScrollReveal>
-          <div className="relative overflow-hidden rounded-3xl gradient-blush-gold px-8 py-20 sm:px-16 sm:py-28 text-center">
-            {/* Decorative blurred orbs */}
-            <div className="absolute top-[-60px] left-[-40px] w-64 h-64 rounded-full bg-[hsl(var(--lavender)/0.4)] blur-3xl pointer-events-none" />
-            <div className="absolute bottom-[-80px] right-[-40px] w-80 h-80 rounded-full bg-[hsl(var(--gold)/0.25)] blur-3xl pointer-events-none" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-[hsl(var(--blush)/0.3)] blur-3xl pointer-events-none" />
-
-            <div className="relative z-10">
-              <motion.h2
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-charcoal leading-[1.1] tracking-tight max-w-2xl mx-auto"
-              >
-                Ready to Create Something Beautiful?
-              </motion.h2>
-              <motion.p
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-                className="mt-5 text-charcoal/60 text-base sm:text-lg max-w-md mx-auto leading-relaxed"
-              >
-                Let us bring your vision to life with a personalized event experience.
-              </motion.p>
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                className="mt-10"
-              >
-                <Link
-                  to="/contact"
-                  className="inline-flex rounded-full bg-card px-10 py-4 text-base font-semibold text-charcoal shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.03] active:scale-[0.97]"
-                >
-                  Start Planning
-                </Link>
-              </motion.div>
-            </div>
           </div>
-        </ScrollReveal>
-      </div>
-    </section>
-  </main>
-);
+          <div className="md:col-span-6 md:col-start-7 pt-12 md:pt-0">
+            <ScrollReveal direction="left" delay={0.1}>
+              <span className="font-sans text-[#c2a15b] font-semibold uppercase tracking-[0.2em] text-xs mb-6 block">
+                Our Heritage
+              </span>
+              <h2 className="font-serif text-4xl sm:text-5xl mb-8 leading-tight text-charcoal">
+                The Art of <br />
+                <span className="italic">Curation.</span>
+              </h2>
+              <div className="space-y-6 text-charcoal/70 leading-relaxed text-lg max-w-lg">
+                <p>
+                  We believe that every event is a story waiting to be told. From our very
+                  first celebration, Belle Vie has been dedicated to the pursuit of
+                  aesthetic perfection and unparalleled hospitality.
+                </p>
+                <p>
+                  Our approach brings together the finest elements of design, culinary
+                  artistry, and meticulous coordination—where every detail is hand-selected,
+                  every course composed with intent, and every moment paced to perfection.
+                </p>
+              </div>
+              <div className="mt-12">
+                <Link
+                  to="/about"
+                  className="font-sans font-semibold text-[#c2a15b] text-xs uppercase tracking-[0.2em] border-b border-[#c2a15b]/40 pb-1 inline-block hover:border-[#c2a15b] transition-colors"
+                >
+                  Discover the legacy
+                </Link>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Events (Bento Grid Style) */}
+      <section className="py-24 lg:py-32 bg-background">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12 sm:mb-16 gap-6">
+              <div>
+                <span className="font-sans text-[#c2a15b] font-semibold uppercase tracking-[0.2em] text-xs mb-4 block">
+                  The Gallery
+                </span>
+                <h2 className="font-serif text-4xl text-charcoal">Featured Events</h2>
+              </div>
+              <Link
+                to="/gallery"
+                className="font-sans font-semibold text-[#c2a15b] text-xs uppercase tracking-[0.2em] hover:text-charcoal transition-colors border-b border-transparent hover:border-charcoal pb-1"
+              >
+                View all collections
+              </Link>
+            </div>
+          </ScrollReveal>
+          
+          <ScrollReveal delay={0.1}>
+            <div className="columns-1 md:columns-2 gap-6">
+              {featuredEvents.map((event) => (
+                <Link 
+                  key={event.id}
+                  to="/gallery" 
+                  className="break-inside-avoid mb-6 relative group block overflow-hidden rounded-sm shadow-md"
+                >
+                  <img
+                    alt={event.alt}
+                    className="w-full h-auto transition-transform duration-1000 group-hover:scale-105"
+                    src={event.src}
+                  />
+                  <div className="absolute inset-0 bg-charcoal/30 group-hover:bg-charcoal/40 transition-all duration-500"></div>
+                  <div className="absolute bottom-0 left-0 p-6 sm:p-8 text-left">
+                    <span className="text-white/90 font-sans font-semibold text-[10px] uppercase tracking-[0.3em] drop-shadow-md">
+                      {event.location}
+                    </span>
+                    <h3 className="text-white font-serif text-2xl sm:text-3xl mt-2 italic drop-shadow-md">
+                      {event.title}
+                    </h3>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Services Overview */}
+      <section className="py-24 lg:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="text-center mb-20 lg:mb-24">
+              <span className="font-sans text-[#c2a15b] font-semibold uppercase tracking-[0.2em] text-xs mb-4 block">
+                Bespoke Offerings
+              </span>
+              <h2 className="font-serif text-4xl md:text-5xl text-charcoal">Our Core Services</h2>
+            </div>
+          </ScrollReveal>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+            {/* Service 1 */}
+            <ScrollReveal delay={0.1}>
+              <div className="text-center group">
+                <div className="aspect-[3/4] overflow-hidden rounded-sm mb-8 shadow-md bg-background relative block">
+                  <img
+                    src={culturalImg}
+                    alt="Event Design"
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/10 transition-colors duration-500 pointer-events-none"></div>
+                </div>
+                <h3 className="font-serif text-2xl mb-4 italic text-charcoal">Event Design</h3>
+                <p className="text-charcoal/70 leading-relaxed px-4">
+                  From conceptual mood boards to the final floral arrangement, we design sensory experiences.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            {/* Service 2 */}
+            <ScrollReveal delay={0.2}>
+              <div className="text-center group">
+                <div className="aspect-[3/4] overflow-hidden rounded-sm mb-8 shadow-md bg-background relative block md:mt-12">
+                  <img
+                    src={cateringImg}
+                    alt="Artisanal Catering"
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/10 transition-colors duration-500 pointer-events-none"></div>
+                </div>
+                <h3 className="font-serif text-2xl mb-4 italic text-charcoal">Artisanal Catering</h3>
+                <p className="text-charcoal/70 leading-relaxed px-4">
+                  Menus inspired by seasonality and global trends, crafted by our executive culinary team.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            {/* Service 3 */}
+            <ScrollReveal delay={0.3}>
+              <div className="text-center group">
+                <div className="aspect-[3/4] overflow-hidden rounded-sm mb-8 shadow-md bg-background relative block">
+                  <img
+                    src={welcomeImg}
+                    alt="White Glove Service"
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/10 transition-colors duration-500 pointer-events-none"></div>
+                </div>
+                <h3 className="font-serif text-2xl mb-4 italic text-charcoal">White Glove Service</h3>
+                <p className="text-charcoal/70 leading-relaxed px-4">
+                  Flawless execution handled by a dedicated concierge team for every guest's absolute comfort.
+                </p>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+
+    </main>
+  );
+};
 
 export default Index;

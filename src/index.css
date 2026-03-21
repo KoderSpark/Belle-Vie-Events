@@ -111,6 +111,13 @@
     border: 1px solid hsla(0, 0%, 100%, 0.6);
   }
 
+  .glass-dark {
+    background: hsla(0, 0%, 7%, 0.4);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid hsla(0, 0%, 100%, 0.1);
+  }
+
   .btn-gradient {
     background: linear-gradient(135deg, hsl(var(--blush)), hsl(var(--peach)), hsl(var(--gold)));
     transition: box-shadow 0.3s ease, transform 0.15s ease;
@@ -136,4 +143,28 @@
   .section-gradient-blush {
     background: linear-gradient(180deg, hsl(var(--ivory)) 0%, hsl(var(--blush) / 0.2) 50%, hsl(var(--ivory)) 100%);
   }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #BF953F, #FCF6BA, #B38728);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #D4AF37, #FFEDAB, #997A15);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #D4AF37 #050505;
 }
