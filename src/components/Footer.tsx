@@ -115,9 +115,9 @@ const Footer = () => {
               <div className="flex flex-col items-center md:items-start text-center md:text-left">
                 <h4 className="text-[#E6C875] text-[10px] tracking-[0.3em] uppercase font-bold mb-8">Quick Links</h4>
                 <ul className="space-y-4 text-sm font-sans-elegant">
-                  {["About", "Services", "Gallery", "Contact"].map((l) => (
+                  {["Home", "Services", "Gallery", "About", "Contact"].map((l) => (
                     <li key={l}>
-                      <Link to={`/${l.toLowerCase()}`} className="text-[#CCCCCC]/60 hover:text-[#D4AF37] transition-colors duration-300 tracking-wide">
+                      <Link to={l === "Home" ? "/" : `/${l.toLowerCase()}`} className="text-[#CCCCCC]/60 hover:text-[#D4AF37] transition-colors duration-300 tracking-wide">
                         {l}
                       </Link>
                     </li>
@@ -131,7 +131,7 @@ const Footer = () => {
                 <ul className="space-y-5 text-sm">
                   <li className="flex items-start justify-center md:justify-start gap-4">
                     <MapPin className="w-4 h-4 text-[#D4AF37] mt-0.5 shrink-0 opacity-80" />
-                    <span className="text-[#CCCCCC]/80 leading-relaxed">Based in Los Angeles, CA<br/>Available Worldwide</span>
+                    <span className="text-[#CCCCCC]/80 leading-relaxed">Priyarani Residency, Sai Baba Temple Lane,<br/>Film Nagar, Hyderabad</span>
                   </li>
                   <li className="flex items-center justify-center md:justify-start gap-4">
                     <Mail className="w-4 h-4 text-[#D4AF37] shrink-0 opacity-80" />
@@ -139,7 +139,10 @@ const Footer = () => {
                   </li>
                   <li className="flex items-center justify-center md:justify-start gap-4">
                     <Phone className="w-4 h-4 text-[#D4AF37] shrink-0 opacity-80" />
-                    <span className="text-[#CCCCCC]/80">(555) 234-5678</span>
+                    <div className="flex flex-col text-[#CCCCCC]/80">
+                      <a href="tel:+919347442350" className="hover:text-[#D4AF37] transition-colors">+91 93474 42350</a>
+                      <a href="tel:+918096110643" className="hover:text-[#D4AF37] transition-colors">+91 80961 10643</a>
+                    </div>
                   </li>
                 </ul>
               </div>

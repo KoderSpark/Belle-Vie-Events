@@ -10,8 +10,17 @@ const budgets = ["Under $500", "$500 – $1,000", "$1,000 – $2,500", "$2,500 �
 
 const contactInfo = [
   { icon: Mail, label: "Email", value: "hello@bellevie.design" },
-  { icon: Phone, label: "Phone", value: "(555) 234-5678" },
-  { icon: MapPin, label: "Based in", value: "Los Angeles, CA" },
+  { 
+    icon: Phone, 
+    label: "Phone", 
+    value: (
+      <div className="flex flex-col">
+        <a href="tel:+919347442350" className="hover:text-[#c2a15b] transition-colors">+91 93474 42350</a>
+        <a href="tel:+918096110643" className="hover:text-[#c2a15b] transition-colors">+91 80961 10643</a>
+      </div>
+    )
+  },
+  { icon: MapPin, label: "Based in", value: "Priyarani Residency, Film Nagar, Hyderabad" },
   { icon: Clock, label: "Response Time", value: "Within 24 hours" },
 ];
 
