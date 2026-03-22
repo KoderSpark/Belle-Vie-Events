@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { Heart, Eye, Gem, ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
-import aboutImg from "@/assets/about-founder.jpg";
-import welcomeImg from "@/assets/welcome.jpg";
-import bridalImg from "@/assets/bridal-shower.jpg";
+import aboutImg from "@/assets/about-founder.webp";
+import welcomeImg from "@/assets/welcome.webp";
+import bridalImg from "@/assets/bridal-shower.webp";
 
 const values = [
   {
@@ -77,11 +77,11 @@ const About = () => {
             <div className="lg:col-span-6 relative">
               <ScrollReveal direction="right">
                 <div className="relative z-10 aspect-[4/5] overflow-hidden rounded-sm shadow-2xl max-w-xl mx-auto lg:mx-0">
-                  <img src={aboutImg} alt="Belle Vie founder" className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-1000" />
+                  <img src={aboutImg} loading="lazy" alt="Belle Vie founder" className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-1000" />
                 </div>
                 {/* Overlapping secondary image - tucked closer */}
                 <div className="absolute -bottom-10 -left-6 hidden xl:block w-56 h-72 z-20 border-[10px] border-white shadow-xl overflow-hidden rounded-sm">
-                  <img src={bridalImg} alt="Detail" className="w-full h-full object-cover" />
+                  <img src={bridalImg} loading="lazy" alt="Detail" className="w-full h-full object-cover" />
                 </div>
                 {/* Floating stat card - tucked closer */}
                 <div className="absolute top-10 -right-6 hidden sm:block p-6 bg-charcoal text-white shadow-2xl z-20 rounded-sm">
@@ -171,7 +171,7 @@ const About = () => {
       {/* Vision — Immersive Manifesto */}
       <section className="relative py-40 lg:py-56 overflow-hidden bg-charcoal">
         <div className="absolute inset-0 z-0">
-          <img src={welcomeImg} alt="Elegant event" className="w-full h-full object-cover opacity-20" />
+          <img src={welcomeImg} loading="lazy" alt="Elegant event" className="w-full h-full object-cover opacity-20" />
           <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-transparent to-charcoal/80" />
         </div>
 

@@ -1,10 +1,10 @@
-import babyShowerImg from "@/assets/baby-shower.jpg";
-import birthdayImg from "@/assets/birthday.jpg";
-import bridalImg from "@/assets/bridal-shower.jpg";
-import culturalImg from "@/assets/cultural.jpg";
-import heroImg from "@/assets/hero-event.jpg";
-import welcomeImg from "@/assets/welcome.jpg";
-import cateringImg from "@/assets/catering.png";
+import babyShowerImg from "@/assets/baby-shower.webp";
+import birthdayImg from "@/assets/birthday.webp";
+import bridalImg from "@/assets/bridal-shower.webp";
+import culturalImg from "@/assets/cultural.webp";
+import heroImg from "@/assets/hero-event.webp";
+import welcomeImg from "@/assets/welcome.webp";
+import cateringImg from "@/assets/catering.webp";
 
 export interface GalleryItem {
   id: string;

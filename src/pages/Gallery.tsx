@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { galleryImages, galleryFilters } from "@/data/data";
-import welcomeImg from "@/assets/welcome.jpg";
+import welcomeImg from "@/assets/welcome.webp";
 
 const Gallery = () => {
   const [active, setActive] = useState("ALL EVENTS");
   const [lightbox, setLightbox] = useState<string | null>(null);
 
-  const filtered = active === "ALL EVENTS" ? galleryImages : galleryImages.filter((img) => img.category === active);
+  const filtered = useMemo(() => {
+    return active === "ALL EVENTS" ? galleryImages : galleryImages.filter((img) => img.category === active);
+  }, [active]);
 
   return (
     <main className="pb-24 overflow-hidden">
@@ -70,6 +72,7 @@ const Gallery = () => {
                 >
                   <img
                     src={img.src}
+                    loading="lazy"
                     alt={img.alt}
                     className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
                   />

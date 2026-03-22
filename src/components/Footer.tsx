@@ -63,7 +63,7 @@ const Footer = () => {
 
       <footer 
         className="text-[#B3B3B3] pt-24 pb-12 relative z-10 mt-auto overflow-hidden bg-cover bg-center bg-no-repeat border-t border-[#D4AF37]/20"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop')" }}
+        style={{ backgroundImage: "url('/footer-bg.webp')" }}
       >
         {/* Dark Tint Overlay */}
         <div className="absolute inset-0 bg-[#050505]/95 z-0" />
@@ -100,11 +100,11 @@ const Footer = () => {
                 </p>
                 <div className="flex gap-4">
                   {[
-                    { Icon: Instagram, href: "#" },
+                    { Icon: Instagram, href: "https://www.instagram.com/bellevieevents_" },
                     { Icon: Facebook, href: "#" },
                     { Icon: Linkedin, href: "#" }
                   ].map((s, idx) => (
-                    <a key={idx} href={s.href} className="w-10 h-10 rounded-full border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#050505] transition-all duration-300">
+                    <a key={idx} href={s.href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#050505] transition-all duration-300">
                       <s.Icon className="w-4 h-4" />
                     </a>
                   ))}
@@ -135,7 +135,7 @@ const Footer = () => {
                   </li>
                   <li className="flex items-center justify-center md:justify-start gap-4">
                     <Mail className="w-4 h-4 text-[#D4AF37] shrink-0 opacity-80" />
-                    <a href="mailto:hello@bellevie.com" className="text-[#CCCCCC]/80 hover:text-[#D4AF37] transition-colors">hello@bellevie.com</a>
+                    <a href="mailto:bellevieeventdesign@gmail.com" className="text-[#CCCCCC]/80 hover:text-[#D4AF37] transition-colors">bellevieeventdesign@gmail.com</a>
                   </li>
                   <li className="flex items-center justify-center md:justify-start gap-4">
                     <Phone className="w-4 h-4 text-[#D4AF37] shrink-0 opacity-80" />

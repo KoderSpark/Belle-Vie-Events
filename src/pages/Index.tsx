@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import ScrollReveal from "@/components/ScrollReveal";
 import { ArrowRight, Sparkles, Utensils, Star } from "lucide-react";
-import heroImg from "@/assets/hero-event.jpg";
-import welcomeImg from "@/assets/welcome.jpg";
-import bridalImg from "@/assets/bridal-shower.jpg";
-import cateringImg from "@/assets/catering.png";
-import culturalImg from "@/assets/cultural.jpg";
+import heroImg from "@/assets/hero-event.webp";
+import welcomeImg from "@/assets/welcome.webp";
+import bridalImg from "@/assets/bridal-shower.webp";
+import cateringImg from "@/assets/catering.webp";
+import culturalImg from "@/assets/cultural.webp";
 import { galleryImages } from "@/data/data";
 
 const Index = () => {

@@ -3,13 +3,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "sonner";
 import { Mail, Phone, MapPin, Clock, Send, ChevronRight, ChevronLeft } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
-import heroImg from "@/assets/hero-event.jpg";
+import heroImg from "@/assets/hero-event.webp";
 
 const eventTypes = ["Baby Shower", "Birthday", "Bridal Shower", "Wedding", "Cultural Celebration", "Corporate Event", "Other"];
 const budgets = ["Under $500", "$500 – $1,000", "$1,000 – $2,500", "$2,500 – $5,000", "$5,000+"];
 
 const contactInfo = [
-  { icon: Mail, label: "Email", value: "hello@bellevie.design" },
+  { icon: Mail, label: "Email", value: "bellevieeventdesign@gmail.com" },
   { 
     icon: Phone, 
     label: "Phone", 
