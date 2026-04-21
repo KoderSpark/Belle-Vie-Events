@@ -79,7 +79,7 @@ const Contact = () => {
       {/* Hero Header */}
       <header className="relative min-h-[50vh] flex items-center overflow-hidden bg-[#111111]">
         <div className="absolute inset-0 z-0">
-          <img alt="Contact" className="w-full h-full object-cover opacity-40" src={heroImg} />
+          <img alt="Contact" className="w-full h-full object-cover opacity-40" src={heroImg} loading="eager" decoding="async" fetchPriority="high" />
           <div className="absolute inset-0 bg-[#111111]/40 mix-blend-multiply"></div>
         </div>
 

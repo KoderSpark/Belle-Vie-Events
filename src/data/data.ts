@@ -2,7 +2,6 @@ import one from "@/assets/one.png";
 import two from "@/assets/two.png";
 import three from "@/assets/three.png";
 import four from "@/assets/four.png";
-import five from "@/assets/five.png";
 import six from "@/assets/six.png";
 import seven from "@/assets/seven.png";
 import eight from "@/assets/eight.png";
@@ -53,14 +52,6 @@ export const galleryImages: GalleryItem[] = [
     title: "Golden Hour Estate",
     location: "Beverly Hills, CA",
     featured: true,
-  },
-  {
-    id: "5",
-    src: five,
-    alt: "Elegant wedding ceremony",
-    category: "WEDDINGS",
-    title: "The Grand Union",
-    location: "New York, NY",
   },
   {
     id: "6",

@@ -33,6 +33,9 @@ const About = () => {
             alt="Elegant event background"
             className="w-full h-full object-cover opacity-50"
             src={welcomeImg}
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-[#111111]/60 mix-blend-multiply"></div>
         </div>
@@ -77,11 +80,11 @@ const About = () => {
             <div className="lg:col-span-6 relative">
               <ScrollReveal direction="right">
                 <div className="relative z-10 aspect-[4/5] overflow-hidden rounded-sm shadow-2xl max-w-xl mx-auto lg:mx-0">
-                  <img src={aboutImg} loading="lazy" alt="haus of veloura founder" className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-1000" />
+                  <img src={aboutImg} loading="lazy" decoding="async" alt="haus of veloura founder" className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-1000" />
                 </div>
                 {/* Overlapping secondary image - tucked closer */}
                 <div className="absolute -bottom-10 -left-6 hidden xl:block w-56 h-72 z-20 border-[10px] border-white shadow-xl overflow-hidden rounded-sm">
-                  <img src={bridalImg} loading="lazy" alt="Detail" className="w-full h-full object-cover" />
+                  <img src={bridalImg} loading="lazy" decoding="async" alt="Detail" className="w-full h-full object-cover" />
                 </div>
                 {/* Floating stat card - tucked closer */}
                 <div className="absolute top-10 -right-6 hidden sm:block p-6 bg-[#111111] text-gray-100 shadow-2xl z-20 rounded-sm">
@@ -171,7 +174,7 @@ const About = () => {
       {/* Vision — Immersive Manifesto */}
       <section className="relative py-40 lg:py-56 overflow-hidden bg-[#111111]">
         <div className="absolute inset-0 z-0">
-          <img src={welcomeImg} loading="lazy" alt="Elegant event" className="w-full h-full object-cover opacity-20" />
+          <img src={welcomeImg} loading="lazy" decoding="async" alt="Elegant event" className="w-full h-full object-cover opacity-20" />
           <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-transparent to-charcoal/80" />
         </div>
 

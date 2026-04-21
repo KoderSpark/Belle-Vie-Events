@@ -5,7 +5,7 @@ import heroImg from "@/assets/one.png";
 import welcomeImg from "@/assets/two.png";
 import bridalImg from "@/assets/three.png";
 import cateringImg from "@/assets/four.png";
-import culturalImg from "@/assets/five.png";
+import culturalImg from "@/assets/eight.png";
 import { galleryImages } from "@/data/data";
 
 const Index = () => {
@@ -20,6 +20,9 @@ const Index = () => {
             alt="Luxurious event hall with long tables and elegant lighting"
             className="w-full h-full object-cover opacity-50"
             src={heroImg}
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-[#111111]/60 mix-blend-multiply"></div>
         </div>
@@ -74,6 +77,8 @@ const Index = () => {
                   alt="Event planning team discussing details"
                   className="w-full h-full object-cover"
                   src={welcomeImg}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="absolute -bottom-8 sm:-bottom-12 -right-8 sm:-right-12 hidden md:block w-48 sm:w-64 h-64 sm:h-80 bg-[#0a0a0a] p-2 sm:p-3 rounded-sm shadow-2xl z-10">
@@ -81,6 +86,8 @@ const Index = () => {
                   alt="Elegant table setting close up"
                   className="w-full h-full object-cover"
                   src={bridalImg}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </ScrollReveal>
@@ -151,13 +158,12 @@ const Index = () => {
                     alt={event.alt}
                     className="w-full h-auto transition-transform duration-1000 group-hover:scale-105"
                     src={event.src}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-[#111111]/30 group-hover:bg-[#111111]/40 transition-all duration-500"></div>
                   <div className="absolute bottom-0 left-0 p-6 sm:p-8 text-left">
-                    <span className="text-gray-100/90 font-sans font-semibold text-[10px] uppercase tracking-[0.3em] drop-shadow-md">
-                      {event.location}
-                    </span>
-                    <h3 className="text-gray-100 font-serif text-2xl sm:text-3xl mt-2 italic drop-shadow-md">
+                    <h3 className="text-gray-100 font-serif text-2xl sm:text-3xl italic drop-shadow-md">
                       {event.title}
                     </h3>
                   </div>
@@ -189,6 +195,8 @@ const Index = () => {
                     src={culturalImg}
                     alt="Event Design"
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-[#111111]/0 group-hover:bg-[#111111]/10 transition-colors duration-500 pointer-events-none"></div>
                 </div>
@@ -207,6 +215,8 @@ const Index = () => {
                     src={cateringImg}
                     alt="Artisanal Catering"
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-[#111111]/0 group-hover:bg-[#111111]/10 transition-colors duration-500 pointer-events-none"></div>
                 </div>
@@ -225,6 +235,8 @@ const Index = () => {
                     src={welcomeImg}
                     alt="White Glove Service"
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-[#111111]/0 group-hover:bg-[#111111]/10 transition-colors duration-500 pointer-events-none"></div>
                 </div>

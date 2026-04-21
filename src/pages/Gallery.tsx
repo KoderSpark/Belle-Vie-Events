@@ -20,6 +20,9 @@ const Gallery = () => {
             alt="Gallery background"
             className="w-full h-full object-cover opacity-40"
             src={welcomeImg}
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-[#111111]/60 mix-blend-multiply"></div>
         </div>
@@ -73,6 +76,7 @@ const Gallery = () => {
                   <img
                     src={img.src}
                     loading="lazy"
+                    decoding="async"
                     alt={img.alt}
                     className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
                   />
@@ -95,6 +99,7 @@ const Gallery = () => {
             src={lightbox}
             alt="Gallery preview"
             className="max-h-[90vh] max-w-full shadow-2xl object-contain"
+            decoding="async"
           />
         </div>
       )}

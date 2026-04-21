@@ -17,6 +17,9 @@ const Services = () => {
             alt="Luxurious event hosting"
             className="w-full h-full object-cover opacity-50"
             src={heroImg}
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-[#111111]/60 mix-blend-multiply"></div>
         </div>
@@ -52,6 +55,8 @@ const Services = () => {
                   alt="Luxury event planning"
                   className="w-full h-full object-cover"
                   src={welcomeImg}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               {/* Asymmetric Decorative Element */}
@@ -113,6 +118,8 @@ const Services = () => {
                   alt="Gourmet Catering"
                   className="w-full h-full object-cover"
                   src={cateringImg}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               {/* Overlaid small detail image */}
@@ -121,6 +128,8 @@ const Services = () => {
                   alt="Detail"
                   className="w-full h-full object-cover"
                   src={culturalImg}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </ScrollReveal>
@@ -215,6 +224,8 @@ const Services = () => {
                     alt="Floral Design 1"
                     className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
                     src={bridalImg}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </ScrollReveal>
@@ -224,6 +235,8 @@ const Services = () => {
                     alt="Floral Design 2"
                     className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
                     src={heroImg}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </ScrollReveal>
