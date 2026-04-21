@@ -59,6 +59,8 @@ export default {
         ivory: "hsl(var(--ivory))",
         charcoal: "hsl(var(--charcoal))",
         "soft-gray": "hsl(var(--soft-gray))",
+        "brand-taupe": "#89725B",
+        "brand-black": "#000000",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

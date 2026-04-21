@@ -26,16 +26,16 @@ const Navbar = () => {
   const isTop = !scrolled;
 
   const glassClass = isTop ? "glass-dark" : "glass-strong";
-  const textClass = isTop ? "text-white" : "text-charcoal";
-  const mutedTextClass = isTop ? "text-white/70" : "text-soft-gray";
-  const activeBgClass = isTop ? "bg-white/10" : "bg-[hsl(var(--peach)/0.35)]";
+  const textClass = isTop ? "text-gray-100" : "text-gray-100";
+  const mutedTextClass = isTop ? "text-gray-100/70" : "text-soft-gray";
+  const activeBgClass = isTop ? "bg-[#0a0a0a]/10" : "bg-[#0a0a0a]";
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4 transition-all duration-500">
       <nav className={`flex items-center gap-8 ${glassClass} rounded-full px-8 py-3 shadow-sm transition-all duration-500`}>
         {/* Brand */}
         <Link to="/" className={`font-serif text-xl font-semibold tracking-tight ${textClass} mr-4 transition-colors`}>
-          Belle Vie
+          haus of veloura
         </Link>
 
         {/* Desktop Links */}

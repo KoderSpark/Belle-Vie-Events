@@ -63,7 +63,7 @@ const Footer = () => {
 
       <footer 
         className="text-[#B3B3B3] pt-24 pb-12 relative z-10 mt-auto overflow-hidden bg-cover bg-center bg-no-repeat border-t border-[#D4AF37]/20"
-        style={{ backgroundImage: "url('/footer-bg.webp')" }}
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=2048&auto=format&fit=crop')" }}
       >
         {/* Dark Tint Overlay */}
         <div className="absolute inset-0 bg-[#050505]/95 z-0" />
@@ -94,7 +94,7 @@ const Footer = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-20 mb-20">
               {/* Brand Column */}
               <div className="flex flex-col items-center md:items-start text-center md:text-left">
-                <h2 className="text-3xl font-serif-premium gold-gradient-text mb-6">Belle Vie</h2>
+                <h2 className="text-3xl font-serif-premium gold-gradient-text mb-6">haus of veloura</h2>
                 <p className="text-sm font-light leading-relaxed text-[#CCCCCC]/80 mb-8 max-w-xs font-sans-elegant">
                   Luxury event design & decor for your most cherished milestones. Every detail, beautifully curated for ultimate elegance.
                 </p>
@@ -151,7 +151,7 @@ const Footer = () => {
 
           {/* Bottom Section: Copyright */}
           <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-[#D4AF37]/10 text-[10px] font-sans-elegant tracking-[0.1em] text-[#8A8A8A]">
-            <p className="uppercase">© {new Date().getFullYear()} Belle Vie Events. All Rights Reserved.</p>
+            <p className="uppercase">© {new Date().getFullYear()} haus of veloura Events. All Rights Reserved.</p>
             <div className="flex gap-8 mt-6 md:mt-0 uppercase">
               <a href="#" className="hover:text-[#D4AF37] transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-[#D4AF37] transition-colors">Terms of Service</a>

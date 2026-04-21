@@ -189,7 +189,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onFinish }) => {
 
           {/* Brand Name */}
           <h1 className="text-4xl md:text-5xl font-serif-premium tracking-wide mb-6 text-center">
-            <span className="gold-gradient-text">Belle Vie Events</span>
+            <span className="gold-gradient-text">haus of veloura Events</span>
           </h1>
 
           {/* Dynamic Loading Message with Elegant Tracking */}

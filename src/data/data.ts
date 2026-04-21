@@ -1,10 +1,11 @@
-import babyShowerImg from "@/assets/baby-shower.webp";
-import birthdayImg from "@/assets/birthday.webp";
-import bridalImg from "@/assets/bridal-shower.webp";
-import culturalImg from "@/assets/cultural.webp";
-import heroImg from "@/assets/hero-event.webp";
-import welcomeImg from "@/assets/welcome.webp";
-import cateringImg from "@/assets/catering.webp";
+import one from "@/assets/one.png";
+import two from "@/assets/two.png";
+import three from "@/assets/three.png";
+import four from "@/assets/four.png";
+import five from "@/assets/five.png";
+import six from "@/assets/six.png";
+import seven from "@/assets/seven.png";
+import eight from "@/assets/eight.png";
 
 export interface GalleryItem {
   id: string;
@@ -19,8 +20,8 @@ export interface GalleryItem {
 export const galleryImages: GalleryItem[] = [
   {
     id: "1",
-    src: culturalImg,
-    alt: "Outdoor wedding reception",
+    src: one,
+    alt: "Elegant celebration event",
     category: "GALAS",
     title: "The Summer Soirée",
     location: "Cotswolds, UK",
@@ -28,8 +29,8 @@ export const galleryImages: GalleryItem[] = [
   },
   {
     id: "2",
-    src: cateringImg,
-    alt: "Elegant dinner party",
+    src: two,
+    alt: "Refined dinner ambiance",
     category: "PRIVATE DINING",
     title: "L'Art de Vivre",
     location: "Paris, FR",
@@ -37,8 +38,8 @@ export const galleryImages: GalleryItem[] = [
   },
   {
     id: "3",
-    src: babyShowerImg,
-    alt: "Baby shower celebration",
+    src: three,
+    alt: "Celebration gathering",
     category: "PRIVATE DINING",
     title: "Metropolitan Elegance",
     location: "London, UK",
@@ -46,8 +47,8 @@ export const galleryImages: GalleryItem[] = [
   },
   {
     id: "4",
-    src: birthdayImg,
-    alt: "Birthday gala",
+    src: four,
+    alt: "Luxurious gala affair",
     category: "GALAS",
     title: "Golden Hour Estate",
     location: "Beverly Hills, CA",
@@ -55,27 +56,36 @@ export const galleryImages: GalleryItem[] = [
   },
   {
     id: "5",
-    src: welcomeImg,
-    alt: "Elegant wedding setup",
+    src: five,
+    alt: "Elegant wedding ceremony",
     category: "WEDDINGS",
     title: "The Grand Union",
     location: "New York, NY",
   },
   {
     id: "6",
-    src: bridalImg,
-    alt: "Bridal event",
+    src: six,
+    alt: "Bridal event splendor",
     category: "WEDDINGS",
     title: "Morning Mist Bridal",
     location: "Tuscany, IT",
   },
   {
     id: "7",
-    src: heroImg,
-    alt: "Corporate event",
+    src: seven,
+    alt: "Corporate gathering",
     category: "CORPORATE",
     title: "The Visionary Summit",
     location: "Berlin, DE",
+  },
+  {
+    id: "8",
+    src: eight,
+    alt: "Exquisite event experience",
+    category: "GALAS",
+    title: "Nocturne Elegance",
+    location: "Monaco, MC",
+    featured: true,
   },
 ];
 

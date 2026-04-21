@@ -70,17 +70,17 @@ const Contact = () => {
   };
 
   const inputClass =
-    "w-full bg-transparent border-b border-charcoal/20 py-4 text-lg text-charcoal placeholder:text-charcoal/30 focus:outline-none focus:border-[#c2a15b] transition-all duration-300 font-sans";
+    "w-full bg-transparent border-b border-white/20 py-4 text-lg text-gray-100 placeholder:text-gray-100/30 focus:outline-none focus:border-[#c2a15b] transition-all duration-300 font-sans";
 
   const stepLabels = ["The Basics", "The Celebration", "The Vision"];
 
   return (
-    <main className="pb-20 overflow-hidden bg-[#fbf9f6]">
+    <main className="pb-20 overflow-hidden bg-[#050505]">
       {/* Hero Header */}
-      <header className="relative min-h-[50vh] flex items-center overflow-hidden bg-charcoal">
+      <header className="relative min-h-[50vh] flex items-center overflow-hidden bg-[#111111]">
         <div className="absolute inset-0 z-0">
           <img alt="Contact" className="w-full h-full object-cover opacity-40" src={heroImg} />
-          <div className="absolute inset-0 bg-charcoal/40 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-[#111111]/40 mix-blend-multiply"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10 py-20 mt-16 text-center">
@@ -94,7 +94,7 @@ const Contact = () => {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-7xl font-serif text-white leading-tight"
+            className="text-5xl md:text-7xl font-serif text-gray-100 leading-tight"
           >
             Let's Start <span className="italic font-normal">Planning</span>
           </motion.h1>
@@ -109,20 +109,20 @@ const Contact = () => {
             <div className="lg:col-span-4 space-y-12">
               <ScrollReveal>
                 <div className="space-y-8">
-                  <h2 className="font-serif text-3xl text-charcoal">Enquiry <br/>Stage</h2>
+                  <h2 className="font-serif text-3xl text-gray-100">Enquiry <br/>Stage</h2>
                   
                   {/* Custom Progress Indicator */}
                   <div className="space-y-6 pt-4">
                     {stepLabels.map((label, i) => (
                       <div key={label} className="flex items-center gap-4">
                         <div className={`w-8 h-8 rounded-full border flex items-center justify-center text-[10px] font-bold transition-all duration-500 ${
-                          step === i + 1 ? 'border-[#c2a15b] bg-[#c2a15b] text-white shadow-lg' : 
-                          step > i + 1 ? 'border-charcoal bg-charcoal text-white' : 'border-charcoal/20 text-charcoal/30'
+                          step === i + 1 ? 'border-[#c2a15b] bg-[#c2a15b] text-gray-100 shadow-lg' : 
+                          step > i + 1 ? 'border-white/20 bg-[#111111] text-gray-100' : 'border-white/20 text-gray-100/30'
                         }`}>
                           {i + 1}
                         </div>
                         <span className={`font-sans text-[11px] uppercase tracking-widest font-semibold transition-colors duration-500 ${
-                          step === i + 1 ? 'text-charcoal' : 'text-charcoal/30'
+                          step === i + 1 ? 'text-gray-100' : 'text-gray-100/30'
                         }`}>
                           {label}
                         </span>
@@ -134,12 +134,12 @@ const Contact = () => {
                 <div className="pt-20 space-y-8 hidden lg:block">
                   {contactInfo.map((info) => (
                     <div key={info.label} className="flex items-start gap-4">
-                      <div className="mt-1 p-2 bg-charcoal/[0.03] rounded-sm">
+                      <div className="mt-1 p-2 bg-[#111111]/[0.03] rounded-sm">
                         <info.icon size={16} className="text-[#c2a15b]" />
                       </div>
                       <div>
-                        <p className="text-[10px] font-bold uppercase tracking-widest text-charcoal/30 mb-1">{info.label}</p>
-                        <p className="text-sm font-medium text-charcoal">{info.value}</p>
+                        <p className="text-[10px] font-bold uppercase tracking-widest text-gray-100/30 mb-1">{info.label}</p>
+                        <p className="text-sm font-medium text-gray-100">{info.value}</p>
                       </div>
                     </div>
                   ))}
@@ -149,7 +149,7 @@ const Contact = () => {
 
             {/* Right: Interactive Form */}
             <div className="lg:col-span-8">
-              <div className="bg-white p-8 md:p-16 rounded-sm shadow-sm border border-charcoal/5 min-h-[600px] flex flex-col relative overflow-hidden">
+              <div className="bg-[#0a0a0a] p-8 md:p-16 rounded-sm shadow-sm border border-white/5 min-h-[600px] flex flex-col relative overflow-hidden">
                 <form onSubmit={handleSubmit} className="flex-1 flex flex-col">
                   <AnimatePresence mode="wait">
                     {step === 1 && (
@@ -161,8 +161,8 @@ const Contact = () => {
                         className="space-y-10 flex-1"
                       >
                         <div className="space-y-2">
-                          <h3 className="font-serif text-2xl text-charcoal">Who shall we speak with?</h3>
-                          <p className="text-charcoal/40 text-sm">Tell us who you are so we can address you personally.</p>
+                          <h3 className="font-serif text-2xl text-gray-100">Who shall we speak with?</h3>
+                          <p className="text-gray-100/40 text-sm">Tell us who you are so we can address you personally.</p>
                         </div>
                         <div className="space-y-8">
                           <input required name="name" value={formData.name} onChange={handleInputChange} placeholder="Your full name" className={inputClass} />
@@ -181,27 +181,27 @@ const Contact = () => {
                         className="space-y-10 flex-1"
                       >
                         <div className="space-y-2">
-                          <h3 className="font-serif text-2xl text-charcoal">The Celebration</h3>
-                          <p className="text-charcoal/40 text-sm">Help us understand the scale and style of your event.</p>
+                          <h3 className="font-serif text-2xl text-gray-100">The Celebration</h3>
+                          <p className="text-gray-100/40 text-sm">Help us understand the scale and style of your event.</p>
                         </div>
                         <div className="grid md:grid-cols-2 gap-10">
                           <div className="space-y-2">
-                            <label className="text-[10px] font-bold uppercase tracking-widest text-charcoal/40">Event Type</label>
+                            <label className="text-[10px] font-bold uppercase tracking-widest text-gray-100/40">Event Type</label>
                             <select name="eventType" value={formData.eventType} onChange={handleInputChange} className={inputClass}>
                               <option value="">Select an option</option>
                               {eventTypes.map(t => <option key={t} value={t}>{t}</option>)}
                             </select>
                           </div>
                           <div className="space-y-2">
-                            <label className="text-[10px] font-bold uppercase tracking-widest text-charcoal/40">Desired Date</label>
+                            <label className="text-[10px] font-bold uppercase tracking-widest text-gray-100/40">Desired Date</label>
                             <input name="date" value={formData.date} onChange={handleInputChange} type="date" className={inputClass} />
                           </div>
                           <div className="space-y-2">
-                            <label className="text-[10px] font-bold uppercase tracking-widest text-charcoal/40">Guest Count</label>
+                            <label className="text-[10px] font-bold uppercase tracking-widest text-gray-100/40">Guest Count</label>
                             <input name="guests" value={formData.guests} onChange={handleInputChange} type="number" placeholder="Approx. guests" className={inputClass} />
                           </div>
                           <div className="space-y-2">
-                            <label className="text-[10px] font-bold uppercase tracking-widest text-charcoal/40">Investment / Budget</label>
+                            <label className="text-[10px] font-bold uppercase tracking-widest text-gray-100/40">Investment / Budget</label>
                             <select name="budget" value={formData.budget} onChange={handleInputChange} className={inputClass}>
                               <option value="">Select range</option>
                               {budgets.map(b => <option key={b} value={b}>{b}</option>)}
@@ -220,8 +220,8 @@ const Contact = () => {
                         className="space-y-10 flex-1"
                       >
                         <div className="space-y-2">
-                          <h3 className="font-serif text-2xl text-charcoal">The Vision</h3>
-                          <p className="text-charcoal/40 text-sm">Every detail counts. Share your inspiration with us.</p>
+                          <h3 className="font-serif text-2xl text-gray-100">The Vision</h3>
+                          <p className="text-gray-100/40 text-sm">Every detail counts. Share your inspiration with us.</p>
                         </div>
                         <div className="space-y-8">
                           <input name="location" value={formData.location} onChange={handleInputChange} placeholder="Planned location / Venue" className={inputClass} />
@@ -233,19 +233,19 @@ const Contact = () => {
                   </AnimatePresence>
 
                   {/* Navigation Buttons */}
-                  <div className="mt-16 pt-8 border-t border-charcoal/5 flex justify-between items-center">
+                  <div className="mt-16 pt-8 border-t border-white/5 flex justify-between items-center">
                     {step > 1 ? (
-                      <button type="button" onClick={prevStep} className="flex items-center gap-2 font-sans text-[10px] font-bold uppercase tracking-widest text-charcoal/40 hover:text-charcoal transition-colors">
+                      <button type="button" onClick={prevStep} className="flex items-center gap-2 font-sans text-[10px] font-bold uppercase tracking-widest text-gray-100/40 hover:text-gray-100 transition-colors">
                         <ChevronLeft size={14} /> Back
                       </button>
                     ) : <div />}
 
                     {step < 3 ? (
-                      <button type="button" onClick={nextStep} className="bg-charcoal text-white px-8 py-3 rounded-sm flex items-center gap-3 font-sans text-[10px] font-bold uppercase tracking-widest hover:bg-[#c2a15b] transition-all duration-300 shadow-md">
+                      <button type="button" onClick={nextStep} className="bg-[#111111] text-gray-100 px-8 py-3 rounded-sm flex items-center gap-3 font-sans text-[10px] font-bold uppercase tracking-widest hover:bg-[#c2a15b] transition-all duration-300 shadow-md">
                         Continue <ChevronRight size={14} />
                       </button>
                     ) : (
-                      <button type="submit" disabled={submitting} className="bg-[#c2a15b] text-white px-8 py-3 rounded-sm flex items-center gap-3 font-sans text-[10px] font-bold uppercase tracking-widest hover:bg-charcoal transition-all duration-300 shadow-lg disabled:opacity-50">
+                      <button type="submit" disabled={submitting} className="bg-[#c2a15b] text-gray-100 px-8 py-3 rounded-sm flex items-center gap-3 font-sans text-[10px] font-bold uppercase tracking-widest hover:bg-[#111111] transition-all duration-300 shadow-lg disabled:opacity-50">
                         {submitting ? "Sending..." : <>Complete Inquiry <Send size={14} /></>}
                       </button>
                     )}
