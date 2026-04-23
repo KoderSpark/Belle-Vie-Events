@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { Heart, Eye, Gem, ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
-const aboutImg = "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=2048&auto=format&fit=crop";
-const welcomeImg = "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2048&auto=format&fit=crop";
-const bridalImg = "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=2048&auto=format&fit=crop";
+import eightImg from "@/assets/eight.png";
+import welcomeImg from "@/assets/welcome.webp";
+import bridalImg from "@/assets/bridal-shower.webp";
 
 const values = [
   {
@@ -72,7 +72,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* The Founder — Asymmetric Layers */}
+      {/* About The Company — Asymmetric Layers */}
       <section className="py-24 lg:py-40 bg-[#0a0a0a] relative">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-center">
@@ -80,13 +80,13 @@ const About = () => {
             <div className="lg:col-span-6 relative">
               <ScrollReveal direction="right">
                 <div className="relative z-10 aspect-[4/5] overflow-hidden rounded-sm shadow-2xl max-w-xl mx-auto lg:mx-0">
-                  <img src={aboutImg} loading="lazy" decoding="async" alt="haus of veloura founder" className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-1000" />
+                  <img src={eightImg} loading="lazy" decoding="async" alt="Elegant event imagery" className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-1000" />
                 </div>
                 {/* Overlapping secondary image - tucked closer */}
                 <div className="absolute -bottom-10 -left-6 hidden xl:block w-56 h-72 z-20 border-[10px] border-white shadow-xl overflow-hidden rounded-sm">
                   <img src={bridalImg} loading="lazy" decoding="async" alt="Detail" className="w-full h-full object-cover" />
                 </div>
-                {/* Floating stat card - tucked closer */}
+                {/* Floating stat card - company stats */}
                 <div className="absolute top-10 -right-6 hidden sm:block p-6 bg-[#111111] text-gray-100 shadow-2xl z-20 rounded-sm">
                   <div className="mb-0.5">
                     <span className="text-3xl font-serif text-[#c2a15b]">200+</span>
@@ -99,34 +99,32 @@ const About = () => {
             <div className="lg:col-span-6 space-y-10 lg:pl-10">
               <ScrollReveal direction="left" delay={0.2}>
                 <span className="font-sans text-[#c2a15b] font-semibold uppercase tracking-[0.2em] text-xs mb-4 block">
-                  The Founder
+                  About haus of veloura
                 </span>
                 <h2 className="font-serif text-4xl sm:text-5xl text-gray-100 leading-tight">
-                  The Heart <br />
-                  <span className="italic">Behind haus of veloura</span>
+                  Crafting Experiences <br />
+                  <span className="italic">that last a lifetime</span>
                 </h2>
                 <div className="space-y-6 text-gray-100/70 leading-relaxed text-lg pt-4">
                   <p>
-                    haus of veloura was born from a deeply personal belief: that every celebration,
-                    no matter the scale, deserves to feel extraordinary. What started as a
-                    creative passion for balloon artistry evolved into a full-service luxury
-                    event design studio.
+                    haus of veloura is a full-service luxury event design studio dedicated to transforming
+                    moments into meaningful experiences. We combine refined aesthetics with meticulous
+                    planning to create events that reflect each client's story.
                   </p>
                   <p>
-                    Our founder's journey began with a simple question —
-                    <em className="text-gray-100 font-medium"> "What if every detail could spark joy?"</em>
-                    That curiosity led to years of studying color theory, spatial design,
-                    and the delicate art of atmosphere.
+                    Working across venues and cultures, our team manages everything from concept development
+                    and styling to logistics and on-site production — ensuring seamless execution and
+                    memorable celebrations.
                   </p>
                 </div>
                 <div className="pt-8 flex gap-12">
                   <div>
                     <h4 className="font-serif text-2xl text-gray-100">6</h4>
-                    <p className="font-sans text-[10px] uppercase tracking-widest text-[#c2a15b] mt-1">Years Exc.</p>
+                    <p className="font-sans text-[10px] uppercase tracking-widest text-[#c2a15b] mt-1">Years Experience</p>
                   </div>
                   <div>
-                    <h4 className="font-serif text-2xl text-gray-100">100%</h4>
-                    <p className="font-sans text-[10px] uppercase tracking-widest text-[#c2a15b] mt-1">Satisfaction</p>
+                    <h4 className="font-serif text-2xl text-gray-100">200+</h4>
+                    <p className="font-sans text-[10px] uppercase tracking-widest text-[#c2a15b] mt-1">Events Styled</p>
                   </div>
                 </div>
               </ScrollReveal>
