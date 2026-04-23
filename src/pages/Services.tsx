@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import ScrollReveal from "@/components/ScrollReveal";
 import { ArrowRight, CheckCircle, BookOpen } from "lucide-react";
-const heroImg = "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2048&auto=format&fit=crop";
-const welcomeImg = "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2048&auto=format&fit=crop";
-const cateringImg = "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2048&auto=format&fit=crop";
-const bridalImg = "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=2048&auto=format&fit=crop";
-const culturalImg = "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2048&auto=format&fit=crop";
+import heroImg from "@/assets/hero-event.webp";
+import welcomeImg from "@/assets/welcome.webp";
+import cateringImg from "@/assets/eleven.png";
+import bridalImg from "@/assets/photo-output.png";
+import culturalImg from "@/assets/cultural.webp";
 
 const Services = () => {
   return (

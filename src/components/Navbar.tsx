@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.jpeg";
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -34,8 +35,9 @@ const Navbar = () => {
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4 transition-all duration-500">
       <nav className={`flex items-center gap-8 ${glassClass} rounded-full px-8 py-3 shadow-sm transition-all duration-500`}>
         {/* Brand */}
-        <Link to="/" className={`font-serif text-xl font-semibold tracking-tight ${textClass} mr-4 transition-colors`}>
-          haus of veloura
+        <Link to="/" className={`flex items-center font-serif text-xl font-semibold tracking-tight ${textClass} mr-4 transition-colors`}>
+          <img src={logo} alt="haus of veloura logo" className="w-10 h-10 rounded-sm mr-3 object-cover" />
+          <span>haus of veloura</span>
         </Link>
 
         {/* Desktop Links */}
