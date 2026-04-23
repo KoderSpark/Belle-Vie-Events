@@ -100,7 +100,7 @@ const Footer = () => {
                 </p>
                 <div className="flex gap-4">
                   {[
-                    { Icon: Instagram, href: "https://www.instagram.com/bellevieevents_" },
+                    { Icon: Instagram, href: "https://www.instagram.com/hausofvelourabykp?igsh=MWMwaDV2ZGY5MXQwdg%3D%3D&utm_source=qr" },
                     { Icon: Facebook, href: "#" },
                     { Icon: Linkedin, href: "#" }
                   ].map((s, idx) => (
@@ -135,7 +135,7 @@ const Footer = () => {
                   </li>
                   <li className="flex items-center justify-center md:justify-start gap-4">
                     <Mail className="w-4 h-4 text-[#D4AF37] shrink-0 opacity-80" />
-                    <a href="mailto:bellevieeventdesign@gmail.com" className="text-[#CCCCCC]/80 hover:text-[#D4AF37] transition-colors">bellevieeventdesign@gmail.com</a>
+                    <a href="mailto:hausofvelourabykp@gmail.com" className="text-[#CCCCCC]/80 hover:text-[#D4AF37] transition-colors">hausofvelourabykp@gmail.com</a>
                   </li>
                   <li className="flex items-center justify-center md:justify-start gap-4">
                     <Phone className="w-4 h-4 text-[#D4AF37] shrink-0 opacity-80" />

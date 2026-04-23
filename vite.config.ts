@@ -11,6 +11,8 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
   },
+  // Treat HEIC images as static assets so imports resolve correctly
+  assetsInclude: ["**/*.HEIC", "**/*.heic"],
   plugins: [react()],
   resolve: {
     alias: {

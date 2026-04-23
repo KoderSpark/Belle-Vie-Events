@@ -1,14 +1,15 @@
 import { useState, useMemo } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { galleryImages, galleryFilters } from "@/data/data";
-import welcomeImg from "@/assets/six.png";
+import welcomeImg from "@/assets/six.jpeg";
 
 const Gallery = () => {
-  const [active, setActive] = useState("ALL EVENTS");
+  const [active, setActive] = useState<string | null>(null);
   const [lightbox, setLightbox] = useState<string | null>(null);
 
   const filtered = useMemo(() => {
-    return active === "ALL EVENTS" ? galleryImages : galleryImages.filter((img) => img.category === active);
+    if (!active || galleryFilters.length === 0) return galleryImages;
+    return galleryImages.filter((img) => img.category === active);
   }, [active]);
 
   return (
@@ -41,24 +42,7 @@ const Gallery = () => {
             </p>
           </ScrollReveal>
 
-          {/* Filters */}
-          <ScrollReveal delay={0.15}>
-            <div className="flex flex-wrap justify-center gap-6 sm:gap-10 mt-16">
-              {galleryFilters.map((f) => (
-                <button
-                  key={f}
-                  onClick={() => setActive(f)}
-                  className={`pb-2 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.15em] transition-all duration-300 ${
-                    active === f
-                      ? "text-[#c2ab87] border-b border-[#c2ab87]"
-                      : "text-gray-100/40 hover:text-gray-100/80 border-b border-transparent"
-                  }`}
-                >
-                  {f}
-                </button>
-              ))}
-            </div>
-          </ScrollReveal>
+          {/* Filters removed per request */}
         </div>
       </header>
 

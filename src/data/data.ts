@@ -1,10 +1,12 @@
-import one from "@/assets/one.png";
-import two from "@/assets/two.png";
-import three from "@/assets/three.png";
-import four from "@/assets/four.png";
-import six from "@/assets/six.png";
-import seven from "@/assets/seven.png";
-import eight from "@/assets/eight.png";
+import one from "@/assets/one.jpeg";
+import two from "@/assets/two.jpeg";
+import three from "@/assets/three.jpeg";
+import four from "@/assets/four.jpeg";
+import five from "@/assets/five.jpeg";
+import six from "@/assets/six.jpeg";
+import seven from "@/assets/seven.jpeg";
+import eight from "@/assets/eight.jpeg";
+import nine from "@/assets/nine.jpeg";
 
 export interface GalleryItem {
   id: string;
@@ -17,67 +19,15 @@ export interface GalleryItem {
 }
 
 export const galleryImages: GalleryItem[] = [
-  {
-    id: "1",
-    src: one,
-    alt: "Elegant celebration event",
-    category: "GALAS",
-    title: "The Summer Soirée",
-    location: "Cotswolds, UK",
-    featured: true,
-  },
-  {
-    id: "2",
-    src: two,
-    alt: "Refined dinner ambiance",
-    category: "PRIVATE DINING",
-    title: "L'Art de Vivre",
-    location: "Paris, FR",
-    featured: true,
-  },
-  {
-    id: "3",
-    src: three,
-    alt: "Celebration gathering",
-    category: "PRIVATE DINING",
-    title: "Metropolitan Elegance",
-    location: "London, UK",
-    featured: true,
-  },
-  {
-    id: "4",
-    src: four,
-    alt: "Luxurious gala affair",
-    category: "GALAS",
-    title: "Golden Hour Estate",
-    location: "Beverly Hills, CA",
-    featured: true,
-  },
-  {
-    id: "6",
-    src: six,
-    alt: "Bridal event splendor",
-    category: "WEDDINGS",
-    title: "Morning Mist Bridal",
-    location: "Tuscany, IT",
-  },
-  {
-    id: "7",
-    src: seven,
-    alt: "Corporate gathering",
-    category: "CORPORATE",
-    title: "The Visionary Summit",
-    location: "Berlin, DE",
-  },
-  {
-    id: "8",
-    src: eight,
-    alt: "Exquisite event experience",
-    category: "GALAS",
-    title: "Nocturne Elegance",
-    location: "Monaco, MC",
-    featured: true,
-  },
+  { id: "1", src: one, alt: "Event photo 1", category: "GALAS", title: "Event One", location: "Location 1", featured: true },
+  { id: "2", src: two, alt: "Event photo 2", category: "PRIVATE DINING", title: "Event Two", location: "Location 2", featured: true },
+  { id: "3", src: three, alt: "Event photo 3", category: "PRIVATE DINING", title: "Event Three", location: "Location 3", featured: true },
+  { id: "4", src: four, alt: "Event photo 4", category: "GALAS", title: "Event Four", location: "Location 4", featured: true },
+  { id: "5", src: five, alt: "Event photo 5", category: "WEDDINGS", title: "Event Five", location: "Location 5" },
+  { id: "6", src: six, alt: "Event photo 6", category: "CORPORATE", title: "Event Six", location: "Location 6" },
+  { id: "7", src: seven, alt: "Event photo 7", category: "CORPORATE", title: "Event Seven", location: "Location 7" },
+  { id: "8", src: eight, alt: "Event photo 8", category: "GALAS", title: "Event Eight", location: "Location 8", featured: true },
+  { id: "9", src: nine, alt: "Event photo 9", category: "GALAS", title: "Event Nine", location: "Location 9" },
 ];
 
-export const galleryFilters = ["ALL EVENTS", "WEDDINGS", "CORPORATE", "GALAS", "PRIVATE DINING"];
+export const galleryFilters: string[] = [];

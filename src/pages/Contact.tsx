@@ -9,7 +9,7 @@ const eventTypes = ["Baby Shower", "Birthday", "Bridal Shower", "Wedding", "Cult
 const budgets = ["Under $500", "$500 – $1,000", "$1,000 – $2,500", "$2,500 – $5,000", "$5,000+"];
 
 const contactInfo = [
-  { icon: Mail, label: "Email", value: "bellevieeventdesign@gmail.com" },
+  { icon: Mail, label: "Email", value: "hausofvelourabykp@gmail.com" },
   { 
     icon: Phone, 
     label: "Phone", 
