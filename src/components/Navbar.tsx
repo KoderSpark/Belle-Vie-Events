@@ -36,8 +36,8 @@ const Navbar = () => {
       <nav className={`flex items-center gap-8 ${glassClass} rounded-full px-8 py-3 shadow-sm transition-all duration-500`}>
         {/* Brand */}
         <Link to="/" className={`flex items-center font-serif text-xl md:text-2xl font-light tracking-[0.2em] uppercase mr-4 transition-colors`}>
-          <img src={logo} alt="Haus of Veloura Logo" className="w-14 h-14 rounded-full mr-4 object-cover shadow-sm border border-[#C9BFA3]/30" />
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#C9BFA3] to-[#E8DFC8]">Haus of Veloura</span>
+          <img src={logo} alt="Haus Of Veloura By JP Logo" className="w-14 h-14 rounded-full mr-4 object-cover shadow-sm border border-[#C9BFA3]/30" />
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#C9BFA3] to-[#E8DFC8]">Haus Of Veloura By JP</span>
         </Link>
 
         {/* Desktop Links */}

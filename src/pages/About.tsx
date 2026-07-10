@@ -66,7 +66,7 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="mt-8 text-gray-100/70 text-lg max-w-xl mx-auto leading-relaxed"
             >
-              Born from a love of beauty and a passion for celebration, Haus of Veloura transforms ordinary moments into extraordinary memories.
+              Born from a love of beauty and a passion for celebration, Haus Of Veloura By JP transforms ordinary moments into extraordinary memories.
             </motion.p>
           </div>
         </div>
@@ -99,7 +99,7 @@ const About = () => {
             <div className="lg:col-span-6 space-y-10 lg:pl-10">
               <ScrollReveal direction="left" delay={0.2}>
                 <span className="font-sans text-[#C9BFA3] font-semibold uppercase tracking-[0.2em] text-xs mb-4 block">
-                  About Haus of Veloura
+                  About Haus Of Veloura By JP
                 </span>
                 <h2 className="font-serif text-4xl sm:text-5xl text-gray-100 leading-tight">
                   Crafting Experiences <br />
@@ -107,7 +107,7 @@ const About = () => {
                 </h2>
                 <div className="space-y-6 text-gray-100/70 leading-relaxed text-lg pt-4">
                   <p>
-                    Haus of Veloura is a full-service luxury event design studio dedicated to transforming
+                    Haus Of Veloura By JP is a full-service luxury event design studio dedicated to transforming
                     moments into meaningful experiences. We combine refined aesthetics with meticulous
                     planning to create events that reflect each client's story.
                   </p>
@@ -192,7 +192,7 @@ const About = () => {
                   to the grandest anniversary — is wrapped in beauty and meaning.
                 </p>
                 <p>
-                  Haus of Veloura is a feeling. A moment frozen in time that reminds you
+                  Haus Of Veloura By JP is a feeling. A moment frozen in time that reminds you
                   <span className="text-gray-100"> how beautiful life truly is.</span>
                 </p>
               </div>

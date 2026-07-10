@@ -94,7 +94,7 @@ const Footer = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-20 mb-20">
               {/* Brand Column */}
               <div className="flex flex-col items-center md:items-start text-center md:text-left">
-                <h2 className="text-3xl font-serif-premium gold-gradient-text mb-6">HAUS OF VELOURA</h2>
+                <h2 className="text-3xl font-serif-premium gold-gradient-text mb-6">HAUS OF VELOURA BY JP</h2>
                 <p className="text-sm font-light leading-relaxed text-[#F5F0E6]/80 mb-8 max-w-xs font-sans-elegant">
                   Luxury event design & decor for your most cherished milestones. Every detail, beautifully curated for ultimate elegance.
                 </p>
@@ -131,7 +131,7 @@ const Footer = () => {
                 <ul className="space-y-5 text-sm">
                   <li className="flex items-start justify-center md:justify-start gap-4">
                     <MapPin className="w-4 h-4 text-[#C9BFA3] mt-0.5 shrink-0 opacity-80" />
-                    <span className="text-[#F5F0E6]/80 leading-relaxed">Priyarani Residency, Sai Baba Temple Lane,<br/>Film Nagar, Hyderabad</span>
+                    <span className="text-[#F5F0E6]/80 leading-relaxed">2-2-186/3 Flat No 501, Ramakrishna Nagar,<br/>Amberpet, Hyderabad 500013 Telangana</span>
                   </li>
                   <li className="flex items-center justify-center md:justify-start gap-4">
                     <Mail className="w-4 h-4 text-[#C9BFA3] shrink-0 opacity-80" />
@@ -140,8 +140,8 @@ const Footer = () => {
                   <li className="flex items-center justify-center md:justify-start gap-4">
                     <Phone className="w-4 h-4 text-[#C9BFA3] shrink-0 opacity-80" />
                     <div className="flex flex-col text-[#F5F0E6]/80">
-                      <a href="tel:+919347442350" className="hover:text-[#C9BFA3] transition-colors">+91 93474 42350</a>
-                      <a href="tel:+918096110643" className="hover:text-[#C9BFA3] transition-colors">+91 80961 10643</a>
+                      <a href="tel:+919392842350" className="hover:text-[#C9BFA3] transition-colors">+91 93928 42350</a>
+                      <a href="tel:+919014927663" className="hover:text-[#C9BFA3] transition-colors">+91 90149 27663</a>
                     </div>
                   </li>
                 </ul>
@@ -151,7 +151,7 @@ const Footer = () => {
 
           {/* Bottom Section: Copyright */}
           <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-[#C9BFA3]/10 text-[10px] font-sans-elegant tracking-[0.1em] text-[#E8DFC8]">
-            <p className="uppercase">© {new Date().getFullYear()} HAUS OF VELOURA Events. All Rights Reserved.</p>
+            <p className="uppercase">© {new Date().getFullYear()} HAUS OF VELOURA BY JP Events. All Rights Reserved.</p>
             <div className="flex gap-8 mt-6 md:mt-0 uppercase">
               <a href="#" className="hover:text-[#C9BFA3] transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-[#C9BFA3] transition-colors">Terms of Service</a>

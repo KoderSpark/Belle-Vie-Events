@@ -104,7 +104,7 @@ const Index = () => {
               <div className="space-y-6 text-gray-100/70 leading-relaxed text-lg max-w-lg">
                 <p>
                   We believe that every event is a story waiting to be told. From our very
-                  first celebration, Haus of Veloura has been dedicated to the pursuit of
+                  first celebration, Haus Of Veloura By JP has been dedicated to the pursuit of
                   aesthetic perfection and unparalleled hospitality.
                 </p>
                 <p>

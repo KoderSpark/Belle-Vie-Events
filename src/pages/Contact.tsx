@@ -15,12 +15,12 @@ const contactInfo = [
     label: "Phone", 
     value: (
       <div className="flex flex-col">
-        <a href="tel:+919347442350" className="hover:text-[#C9BFA3] transition-colors">+91 93474 42350</a>
-        <a href="tel:+918096110643" className="hover:text-[#C9BFA3] transition-colors">+91 80961 10643</a>
+        <a href="tel:+919392842350" className="hover:text-[#C9BFA3] transition-colors">+91 93928 42350</a>
+        <a href="tel:+919014927663" className="hover:text-[#C9BFA3] transition-colors">+91 90149 27663</a>
       </div>
     )
   },
-  { icon: MapPin, label: "Based in", value: "Priyarani Residency, Film Nagar, Hyderabad" },
+  { icon: MapPin, label: "Based in", value: "2-2-186/3 Flat No 501, Ramakrishna Nagar, Amberpet, Hyderabad 500013 Telangana" },
   { icon: Clock, label: "Response Time", value: "Within 24 hours" },
 ];
 
