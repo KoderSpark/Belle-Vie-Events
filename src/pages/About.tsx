@@ -27,7 +27,7 @@ const About = () => {
   return (
     <main className="pb-20 overflow-hidden bg-background">
       {/* Hero — full-width editorial dark */}
-      <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-[#111111] mb-24 lg:mb-32">
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-[#0D1A26] mb-24 lg:mb-32">
         <div className="absolute inset-0 z-0 text-gray-100">
           <img
             alt="Elegant event background"
@@ -37,7 +37,7 @@ const About = () => {
             decoding="async"
             fetchPriority="high"
           />
-          <div className="absolute inset-0 bg-[#111111]/60 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-[#0D1A26]/60 mix-blend-multiply"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10 py-20 mt-16 text-center">
@@ -46,7 +46,7 @@ const About = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-[#c2a15b] mb-6"
+              className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-[#C9BFA3] mb-6"
             >
               Our Story
             </motion.p>
@@ -58,7 +58,7 @@ const About = () => {
             >
               Crafting a
               <br />
-              <span className="italic font-normal text-[#c2a15b] font-serif">Beautiful Life</span>
+              <span className="italic font-normal text-[#C9BFA3] font-serif">Beautiful Life</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 12 }}
@@ -66,14 +66,14 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="mt-8 text-gray-100/70 text-lg max-w-xl mx-auto leading-relaxed"
             >
-              Born from a love of beauty and a passion for celebration, haus of veloura transforms ordinary moments into extraordinary memories.
+              Born from a love of beauty and a passion for celebration, Haus of Veloura transforms ordinary moments into extraordinary memories.
             </motion.p>
           </div>
         </div>
       </section>
 
       {/* About The Company — Asymmetric Layers */}
-      <section className="py-24 lg:py-40 bg-[#0a0a0a] relative">
+      <section className="py-24 lg:py-40 bg-[#112244] relative">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-center">
             {/* Image Layering */}
@@ -87,9 +87,9 @@ const About = () => {
                   <img src={bridalImg} loading="lazy" decoding="async" alt="Detail" className="w-full h-full object-cover" />
                 </div>
                 {/* Floating stat card - company stats */}
-                <div className="absolute top-10 -right-6 hidden sm:block p-6 bg-[#111111] text-gray-100 shadow-2xl z-20 rounded-sm">
+                <div className="absolute top-10 -right-6 hidden sm:block p-6 bg-[#0D1A26] text-gray-100 shadow-2xl z-20 rounded-sm">
                   <div className="mb-0.5">
-                    <span className="text-3xl font-serif text-[#c2a15b]">200+</span>
+                    <span className="text-3xl font-serif text-[#C9BFA3]">200+</span>
                   </div>
                   <p className="font-sans text-[9px] uppercase tracking-widest text-gray-100/60">Events Styled</p>
                 </div>
@@ -98,8 +98,8 @@ const About = () => {
 
             <div className="lg:col-span-6 space-y-10 lg:pl-10">
               <ScrollReveal direction="left" delay={0.2}>
-                <span className="font-sans text-[#c2a15b] font-semibold uppercase tracking-[0.2em] text-xs mb-4 block">
-                  About haus of veloura
+                <span className="font-sans text-[#C9BFA3] font-semibold uppercase tracking-[0.2em] text-xs mb-4 block">
+                  About Haus of Veloura
                 </span>
                 <h2 className="font-serif text-4xl sm:text-5xl text-gray-100 leading-tight">
                   Crafting Experiences <br />
@@ -107,7 +107,7 @@ const About = () => {
                 </h2>
                 <div className="space-y-6 text-gray-100/70 leading-relaxed text-lg pt-4">
                   <p>
-                    haus of veloura is a full-service luxury event design studio dedicated to transforming
+                    Haus of Veloura is a full-service luxury event design studio dedicated to transforming
                     moments into meaningful experiences. We combine refined aesthetics with meticulous
                     planning to create events that reflect each client's story.
                   </p>
@@ -120,11 +120,11 @@ const About = () => {
                 <div className="pt-8 flex gap-12">
                   <div>
                     <h4 className="font-serif text-2xl text-gray-100">6</h4>
-                    <p className="font-sans text-[10px] uppercase tracking-widest text-[#c2a15b] mt-1">Years Experience</p>
+                    <p className="font-sans text-[10px] uppercase tracking-widest text-[#C9BFA3] mt-1">Years Experience</p>
                   </div>
                   <div>
                     <h4 className="font-serif text-2xl text-gray-100">200+</h4>
-                    <p className="font-sans text-[10px] uppercase tracking-widest text-[#c2a15b] mt-1">Events Styled</p>
+                    <p className="font-sans text-[10px] uppercase tracking-widest text-[#C9BFA3] mt-1">Events Styled</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -134,11 +134,11 @@ const About = () => {
       </section>
 
       {/* Philosophy — Staggered Numbered Layout */}
-      <section className="py-24 lg:py-40 bg-[#080808]">
+      <section className="py-24 lg:py-40 bg-[#0D1A26]">
         <div className="container mx-auto px-6 max-w-5xl">
           <ScrollReveal>
             <div className="text-center mb-24">
-              <span className="font-sans text-[#c2a15b] font-semibold uppercase tracking-[0.2em] text-xs mb-4 block">
+              <span className="font-sans text-[#C9BFA3] font-semibold uppercase tracking-[0.2em] text-xs mb-4 block">
                 Philosophy
               </span>
               <h2 className="font-serif text-4xl md:text-5xl text-gray-100 italic">What We Stand For</h2>
@@ -158,7 +158,7 @@ const About = () => {
                     </h3>
                   </div>
                   <div className="md:w-1/2">
-                    <p className="text-gray-100/60 text-lg md:text-xl leading-relaxed font-sans border-l-2 border-[#c2a15b]/30 pl-8">
+                    <p className="text-gray-100/60 text-lg md:text-xl leading-relaxed font-sans border-l-2 border-[#C9BFA3]/30 pl-8">
                       {v.desc}
                     </p>
                   </div>
@@ -170,7 +170,7 @@ const About = () => {
       </section>
 
       {/* Vision — Immersive Manifesto */}
-      <section className="relative py-40 lg:py-56 overflow-hidden bg-[#111111]">
+      <section className="relative py-40 lg:py-56 overflow-hidden bg-[#0D1A26]">
         <div className="absolute inset-0 z-0">
           <img src={welcomeImg} loading="lazy" decoding="async" alt="Elegant event" className="w-full h-full object-cover opacity-20" />
           <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-transparent to-charcoal/80" />
@@ -179,20 +179,20 @@ const About = () => {
         <div className="container mx-auto px-6 relative z-10">
           <ScrollReveal>
             <div className="max-w-4xl mx-auto text-center space-y-12">
-              <span className="font-sans text-[#c2a15b] font-semibold uppercase tracking-[0.3em] text-xs block">
+              <span className="font-sans text-[#C9BFA3] font-semibold uppercase tracking-[0.3em] text-xs block">
                 Our Vision
               </span>
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-serif text-gray-100 leading-[1.15] italic">
                 "More than decor — it's the rhythm <br className="hidden md:block" /> of an unforgettable experience."
               </h2>
-              <div className="w-20 h-[1px] bg-[#c2a15b] mx-auto opacity-50" />
+              <div className="w-20 h-[1px] bg-[#C9BFA3] mx-auto opacity-50" />
               <div className="space-y-8 text-gray-100/60 text-lg md:text-2xl font-sans max-w-2xl mx-auto leading-relaxed italic">
                 <p>
                   We envision a world where every milestone — from the quiet first birthday
                   to the grandest anniversary — is wrapped in beauty and meaning.
                 </p>
                 <p>
-                  haus of veloura is a feeling. A moment frozen in time that reminds you
+                  Haus of Veloura is a feeling. A moment frozen in time that reminds you
                   <span className="text-gray-100"> how beautiful life truly is.</span>
                 </p>
               </div>

@@ -71,7 +71,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onFinish }) => {
           }
 
           .gold-gradient-text {
-            background: linear-gradient(135deg, #E6C875 0%, #FFEDAB 25%, #D4AF37 50%, #997A15 75%, #FBF5B7 100%);
+            background: linear-gradient(135deg, #C9BFA3 0%, #E8DFC8 25%, #C9BFA3 50%, #C9BFA3 75%, #E8DFC8 100%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -95,8 +95,8 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onFinish }) => {
             position: absolute;
             bottom: -20px;
             border-radius: 50%;
-            background: radial-gradient(circle at 30% 30%, #ffffff, #D4AF37);
-            box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+            background: radial-gradient(circle at 30% 30%, #ffffff, #C9BFA3);
+            box-shadow: 0 0 8px rgba(201, 191, 163, 0.3);
             animation: float-up infinite linear;
           }
 
@@ -106,8 +106,8 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onFinish }) => {
           }
           
           @keyframes pulse-glow {
-            0%, 100% { filter: drop-shadow(0 0 10px rgba(212,175,55,0.3)); transform: scale(1); }
-            50% { filter: drop-shadow(0 0 25px rgba(212,175,55,0.7)); transform: scale(1.05); }
+            0%, 100% { filter: drop-shadow(0 0 10px rgba(201,191,163,0.3)); transform: scale(1); }
+            50% { filter: drop-shadow(0 0 25px rgba(201,191,163,0.7)); transform: scale(1.05); }
           }
 
           .animate-pulse-glow {
@@ -118,10 +118,10 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onFinish }) => {
 
       {/* The Luxurious Loading Screen */}
       <div 
-        className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#050505] transition-all duration-[1200ms] ease-in-out"
+        className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#0D1A26] transition-all duration-[1200ms] ease-in-out"
       >
         {/* Dynamic Spotlight Glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80vw] h-[80vh] bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.15)_0%,transparent_60%)] pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80vw] h-[80vh] bg-[radial-gradient(ellipse_at_top,rgba(201,191,163,0.15)_0%,transparent_60%)] pointer-events-none" />
         
         {/* Champagne Bubbles System */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -148,7 +148,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onFinish }) => {
             
             {/* Background dashed ornamental ring */}
             <svg className="absolute inset-0 w-full h-full animate-[spin-slow_24s_linear_infinite]" viewBox="0 0 160 160">
-              <circle cx="80" cy="80" r="76" fill="none" stroke="rgba(212,175,55,0.15)" strokeWidth="0.5" strokeDasharray="2 6" />
+              <circle cx="80" cy="80" r="76" fill="none" stroke="rgba(201,191,163,0.15)" strokeWidth="0.5" strokeDasharray="2 6" />
             </svg>
 
             {/* Main Progress Ring - Animates naturally with state */}
@@ -164,32 +164,32 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onFinish }) => {
                 strokeDasharray={circleCircumference}
                 strokeDashoffset={strokeDashoffset}
                 className="transition-all duration-500 ease-out"
-                style={{ filter: 'drop-shadow(0 0 6px rgba(212,175,55,0.5))' }}
+                style={{ filter: 'drop-shadow(0 0 6px rgba(201,191,163,0.5))' }}
               />
               <defs>
                 <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#BF953F" />
-                  <stop offset="50%" stopColor="#FCF6BA" />
-                  <stop offset="100%" stopColor="#B38728" />
+                  <stop offset="0%" stopColor="#C9BFA3" />
+                  <stop offset="50%" stopColor="#E8DFC8" />
+                  <stop offset="100%" stopColor="#C9BFA3" />
                 </linearGradient>
               </defs>
             </svg>
 
             {/* Inner Floating Emblem */}
-            <div className="relative flex flex-col items-center justify-center text-[#E6C875] animate-pulse-glow">
+            <div className="relative flex flex-col items-center justify-center text-[#C9BFA3] animate-pulse-glow">
               <Wine strokeWidth={1} className="w-14 h-14 mb-2 opacity-90" />
               <div className="flex gap-3 items-center">
-                <div className="w-4 h-[1px] bg-[#D4AF37]/50" />
+                <div className="w-4 h-[1px] bg-[#C9BFA3]/50" />
                 <UtensilsCrossed strokeWidth={1} className="w-5 h-5 opacity-70" />
                 <Sparkles strokeWidth={1.5} className="w-4 h-4 opacity-90" />
-                <div className="w-4 h-[1px] bg-[#D4AF37]/50" />
+                <div className="w-4 h-[1px] bg-[#C9BFA3]/50" />
               </div>
             </div>
           </div>
 
           {/* Brand Name */}
           <h1 className="text-4xl md:text-5xl font-serif-premium tracking-wide mb-6 text-center">
-            <span className="gold-gradient-text">haus of veloura Events</span>
+            <span className="gold-gradient-text uppercase text-2xl font-light tracking-[0.2em]">Haus of Veloura</span>
           </h1>
 
           {/* Dynamic Loading Message with Elegant Tracking */}
@@ -197,7 +197,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onFinish }) => {
             {messages.map((msg, index) => (
               <p
                 key={index}
-                className={`absolute text-[#B3B3B3] text-xs md:text-sm tracking-[0.3em] uppercase transition-all duration-1000 ease-in-out ${
+                className={`absolute text-[#E8DFC8] text-xs md:text-sm tracking-[0.3em] uppercase transition-all duration-1000 ease-in-out ${
                   currentMessage === index 
                     ? 'opacity-100 transform translate-y-0 scale-100' 
                     : 'opacity-0 transform translate-y-6 scale-95'
@@ -209,10 +209,10 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onFinish }) => {
           </div>
 
           {/* Minimalist Numeric Progress */}
-          <div className="flex items-center gap-6 text-[#D4AF37] font-serif-premium text-lg opacity-90">
-            <div className="w-16 h-[1px] bg-gradient-to-r from-transparent to-[#D4AF37]/40" />
+          <div className="flex items-center gap-6 text-[#C9BFA3] font-serif-premium text-lg opacity-90">
+            <div className="w-16 h-[1px] bg-gradient-to-r from-transparent to-[#C9BFA3]/40" />
             <span className="w-14 text-center tabular-nums italic tracking-wider">{Math.round(progress)}%</span>
-            <div className="w-16 h-[1px] bg-gradient-to-l from-transparent to-[#D4AF37]/40" />
+            <div className="w-16 h-[1px] bg-gradient-to-l from-transparent to-[#C9BFA3]/40" />
           </div>
 
         </div>

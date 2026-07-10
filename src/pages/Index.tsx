@@ -12,9 +12,9 @@ const Index = () => {
   const featuredEvents = galleryImages.filter(img => img.featured);
 
   return (
-    <main className="bg-background text-gray-100 font-sans selection:bg-[#c2a15b]/20">
+    <main className="bg-background text-gray-100 font-sans selection:bg-[#C9BFA3]/20">
       {/* Grand Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#111111]">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0D1A26]">
         <div className="absolute inset-0 z-0">
           <img
             alt="Luxurious event hall with long tables and elegant lighting"
@@ -24,11 +24,11 @@ const Index = () => {
             decoding="async"
             fetchPriority="high"
           />
-          <div className="absolute inset-0 bg-[#111111]/60 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-[#0D1A26]/60 mix-blend-multiply"></div>
         </div>
         <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center mt-20">
           <ScrollReveal>
-            <span className="font-sans text-[#c2a15b] uppercase tracking-[0.4em] text-xs font-semibold mb-8 block">
+            <span className="font-sans text-[#C9BFA3] uppercase tracking-[0.4em] text-xs font-semibold mb-8 block">
               Exclusivity Redefined
             </span>
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-[5.5rem] text-gray-100 tracking-tight leading-none mb-12 drop-shadow-lg max-w-6xl mx-auto">
@@ -37,13 +37,13 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8">
               <Link
                 to="/contact"
-                className="bg-[#c2a15b] text-gray-100 px-10 py-4 rounded-sm font-sans tracking-widest uppercase text-sm font-semibold hover:opacity-90 transition-all border border-[#c2a15b]"
+                className="bg-[#C9BFA3] text-gray-100 px-10 py-4 rounded-sm font-sans tracking-widest uppercase text-sm font-semibold hover:opacity-90 transition-all border border-[#C9BFA3]"
               >
                 Inquire Now
               </Link>
               <Link
                 to="/gallery"
-                className="font-sans text-[#c2a15b] border-b border-[#c2a15b]/40 pb-1 tracking-widest uppercase text-sm font-semibold hover:border-[#c2a15b] transition-all"
+                className="font-sans text-[#C9BFA3] border-b border-[#C9BFA3]/40 pb-1 tracking-widest uppercase text-sm font-semibold hover:border-[#C9BFA3] transition-all"
               >
                 View Portfolio
               </Link>
@@ -53,22 +53,22 @@ const Index = () => {
       </section>
 
       {/* Single Row Quote Section */}
-      <section className="py-24 bg-[#050505] border-y border-white/5">
+      <section className="py-24 bg-[#0D1A26] border-y border-white/5">
         <div className="container mx-auto px-6 text-center">
           <ScrollReveal>
             <div className="max-w-6xl mx-auto flex flex-col items-center gap-6">
-              <div className="w-12 h-[1px] bg-[#c2a15b]/40"></div>
+              <div className="w-12 h-[1px] bg-[#C9BFA3]/40"></div>
               <p className="font-serif text-2xl md:text-3xl lg:text-5xl text-gray-100/80 leading-relaxed italic tracking-wide">
                 Luxury is in the details.
               </p>
-              <div className="w-12 h-[1px] bg-[#c2a15b]/40"></div>
+              <div className="w-12 h-[1px] bg-[#C9BFA3]/40"></div>
             </div>
           </ScrollReveal>
         </div>
       </section>
 
       {/* Our Story Section (Asymmetry) */}
-      <section className="py-24 lg:py-32 bg-[#0a0a0a] overflow-hidden">
+      <section className="py-24 lg:py-32 bg-[#112244] overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16 items-center">
           <div className="md:col-span-5 relative">
             <ScrollReveal direction="right">
@@ -81,7 +81,7 @@ const Index = () => {
                   decoding="async"
                 />
               </div>
-              <div className="absolute -bottom-8 sm:-bottom-12 -right-8 sm:-right-12 hidden md:block w-48 sm:w-64 h-64 sm:h-80 bg-[#0a0a0a] p-2 sm:p-3 rounded-sm shadow-2xl z-10">
+              <div className="absolute -bottom-8 sm:-bottom-12 -right-8 sm:-right-12 hidden md:block w-48 sm:w-64 h-64 sm:h-80 bg-[#112244] p-2 sm:p-3 rounded-sm shadow-2xl z-10">
                 <img
                   alt="Elegant table setting close up"
                   className="w-full h-full object-cover"
@@ -94,7 +94,7 @@ const Index = () => {
           </div>
           <div className="md:col-span-6 md:col-start-7 pt-12 md:pt-0">
             <ScrollReveal direction="left" delay={0.1}>
-              <span className="font-sans text-[#c2a15b] font-semibold uppercase tracking-[0.2em] text-xs mb-6 block">
+              <span className="font-sans text-[#C9BFA3] font-semibold uppercase tracking-[0.2em] text-xs mb-6 block">
                 Our Heritage
               </span>
               <h2 className="font-serif text-4xl sm:text-5xl mb-8 leading-tight text-gray-100">
@@ -104,7 +104,7 @@ const Index = () => {
               <div className="space-y-6 text-gray-100/70 leading-relaxed text-lg max-w-lg">
                 <p>
                   We believe that every event is a story waiting to be told. From our very
-                  first celebration, haus of veloura has been dedicated to the pursuit of
+                  first celebration, Haus of Veloura has been dedicated to the pursuit of
                   aesthetic perfection and unparalleled hospitality.
                 </p>
                 <p>
@@ -116,7 +116,7 @@ const Index = () => {
               <div className="mt-12">
                 <Link
                   to="/about"
-                  className="font-sans font-semibold text-[#c2a15b] text-xs uppercase tracking-[0.2em] border-b border-[#c2a15b]/40 pb-1 inline-block hover:border-[#c2a15b] transition-colors"
+                  className="font-sans font-semibold text-[#C9BFA3] text-xs uppercase tracking-[0.2em] border-b border-[#C9BFA3]/40 pb-1 inline-block hover:border-[#C9BFA3] transition-colors"
                 >
                   Discover the legacy
                 </Link>
@@ -132,14 +132,14 @@ const Index = () => {
           <ScrollReveal>
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12 sm:mb-16 gap-6">
               <div>
-                <span className="font-sans text-[#c2a15b] font-semibold uppercase tracking-[0.2em] text-xs mb-4 block">
+                <span className="font-sans text-[#C9BFA3] font-semibold uppercase tracking-[0.2em] text-xs mb-4 block">
                   The Gallery
                 </span>
                 <h2 className="font-serif text-4xl text-gray-100">Featured Events</h2>
               </div>
               <Link
                 to="/gallery"
-                className="font-sans font-semibold text-[#c2a15b] text-xs uppercase tracking-[0.2em] hover:text-gray-100 transition-colors border-b border-transparent hover:border-white/20 pb-1"
+                className="font-sans font-semibold text-[#C9BFA3] text-xs uppercase tracking-[0.2em] hover:text-gray-100 transition-colors border-b border-transparent hover:border-white/20 pb-1"
               >
                 View all collections
               </Link>
@@ -161,7 +161,7 @@ const Index = () => {
                     loading="lazy"
                     decoding="async"
                   />
-                  <div className="absolute inset-0 bg-[#111111]/30 group-hover:bg-[#111111]/40 transition-all duration-500"></div>
+                  <div className="absolute inset-0 bg-[#0D1A26]/30 group-hover:bg-[#0D1A26]/40 transition-all duration-500"></div>
                   <div className="absolute bottom-0 left-0 p-6 sm:p-8 text-left">
                     <h3 className="text-gray-100 font-serif text-2xl sm:text-3xl italic drop-shadow-md">
                       {event.title}
@@ -175,11 +175,11 @@ const Index = () => {
       </section>
 
       {/* Services Overview */}
-      <section className="py-24 lg:py-32 bg-[#0a0a0a]">
+      <section className="py-24 lg:py-32 bg-[#112244]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-20 lg:mb-24">
-              <span className="font-sans text-[#c2a15b] font-semibold uppercase tracking-[0.2em] text-xs mb-4 block">
+              <span className="font-sans text-[#C9BFA3] font-semibold uppercase tracking-[0.2em] text-xs mb-4 block">
                 Bespoke Offerings
               </span>
               <h2 className="font-serif text-4xl md:text-5xl text-gray-100">Our Core Services</h2>
@@ -198,7 +198,7 @@ const Index = () => {
                     loading="lazy"
                     decoding="async"
                   />
-                  <div className="absolute inset-0 bg-[#111111]/0 group-hover:bg-[#111111]/10 transition-colors duration-500 pointer-events-none"></div>
+                  <div className="absolute inset-0 bg-[#0D1A26]/0 group-hover:bg-[#0D1A26]/10 transition-colors duration-500 pointer-events-none"></div>
                 </div>
                 <h3 className="font-serif text-2xl mb-4 italic text-gray-100">Event Design</h3>
                 <p className="text-gray-100/70 leading-relaxed px-4">
@@ -218,7 +218,7 @@ const Index = () => {
                     loading="lazy"
                     decoding="async"
                   />
-                  <div className="absolute inset-0 bg-[#111111]/0 group-hover:bg-[#111111]/10 transition-colors duration-500 pointer-events-none"></div>
+                  <div className="absolute inset-0 bg-[#0D1A26]/0 group-hover:bg-[#0D1A26]/10 transition-colors duration-500 pointer-events-none"></div>
                 </div>
                 <h3 className="font-serif text-2xl mb-4 italic text-gray-100">Artisanal Catering</h3>
                 <p className="text-gray-100/70 leading-relaxed px-4">
@@ -238,7 +238,7 @@ const Index = () => {
                     loading="lazy"
                     decoding="async"
                   />
-                  <div className="absolute inset-0 bg-[#111111]/0 group-hover:bg-[#111111]/10 transition-colors duration-500 pointer-events-none"></div>
+                  <div className="absolute inset-0 bg-[#0D1A26]/0 group-hover:bg-[#0D1A26]/10 transition-colors duration-500 pointer-events-none"></div>
                 </div>
                 <h3 className="font-serif text-2xl mb-4 italic text-gray-100">White Glove Service</h3>
                 <p className="text-gray-100/70 leading-relaxed px-4">

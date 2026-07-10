@@ -15,8 +15,8 @@ const contactInfo = [
     label: "Phone", 
     value: (
       <div className="flex flex-col">
-        <a href="tel:+919347442350" className="hover:text-[#c2a15b] transition-colors">+91 93474 42350</a>
-        <a href="tel:+918096110643" className="hover:text-[#c2a15b] transition-colors">+91 80961 10643</a>
+        <a href="tel:+919347442350" className="hover:text-[#C9BFA3] transition-colors">+91 93474 42350</a>
+        <a href="tel:+918096110643" className="hover:text-[#C9BFA3] transition-colors">+91 80961 10643</a>
       </div>
     )
   },
@@ -70,24 +70,24 @@ const Contact = () => {
   };
 
   const inputClass =
-    "w-full bg-transparent border-b border-white/20 py-4 text-lg text-gray-100 placeholder:text-gray-100/30 focus:outline-none focus:border-[#c2a15b] transition-all duration-300 font-sans";
+    "w-full bg-transparent border-b border-white/20 py-4 text-lg text-gray-100 placeholder:text-gray-100/30 focus:outline-none focus:border-[#C9BFA3] transition-all duration-300 font-sans";
 
   const stepLabels = ["The Basics", "The Celebration", "The Vision"];
 
   return (
-    <main className="pb-20 overflow-hidden bg-[#050505]">
+    <main className="pb-20 overflow-hidden bg-[#0D1A26]">
       {/* Hero Header */}
-      <header className="relative min-h-[50vh] flex items-center overflow-hidden bg-[#111111]">
+      <header className="relative min-h-[50vh] flex items-center overflow-hidden bg-[#0D1A26]">
         <div className="absolute inset-0 z-0">
           <img alt="Contact" className="w-full h-full object-cover opacity-40" src={heroImg} loading="eager" decoding="async" fetchPriority="high" />
-          <div className="absolute inset-0 bg-[#111111]/40 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-[#0D1A26]/40 mix-blend-multiply"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10 py-20 mt-16 text-center">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-sans text-[10px] font-semibold uppercase tracking-[0.4em] text-[#c2a15b] mb-6"
+            className="font-sans text-[10px] font-semibold uppercase tracking-[0.4em] text-[#C9BFA3] mb-6"
           >
             Connect With Us
           </motion.p>
@@ -116,8 +116,8 @@ const Contact = () => {
                     {stepLabels.map((label, i) => (
                       <div key={label} className="flex items-center gap-4">
                         <div className={`w-8 h-8 rounded-full border flex items-center justify-center text-[10px] font-bold transition-all duration-500 ${
-                          step === i + 1 ? 'border-[#c2a15b] bg-[#c2a15b] text-gray-100 shadow-lg' : 
-                          step > i + 1 ? 'border-white/20 bg-[#111111] text-gray-100' : 'border-white/20 text-gray-100/30'
+                          step === i + 1 ? 'border-[#C9BFA3] bg-[#C9BFA3] text-gray-100 shadow-lg' : 
+                          step > i + 1 ? 'border-white/20 bg-[#0D1A26] text-gray-100' : 'border-white/20 text-gray-100/30'
                         }`}>
                           {i + 1}
                         </div>
@@ -134,8 +134,8 @@ const Contact = () => {
                 <div className="pt-20 space-y-8 hidden lg:block">
                   {contactInfo.map((info) => (
                     <div key={info.label} className="flex items-start gap-4">
-                      <div className="mt-1 p-2 bg-[#111111]/[0.03] rounded-sm">
-                        <info.icon size={16} className="text-[#c2a15b]" />
+                      <div className="mt-1 p-2 bg-[#0D1A26]/[0.03] rounded-sm">
+                        <info.icon size={16} className="text-[#C9BFA3]" />
                       </div>
                       <div>
                         <p className="text-[10px] font-bold uppercase tracking-widest text-gray-100/30 mb-1">{info.label}</p>
@@ -149,7 +149,7 @@ const Contact = () => {
 
             {/* Right: Interactive Form */}
             <div className="lg:col-span-8">
-              <div className="bg-[#0a0a0a] p-8 md:p-16 rounded-sm shadow-sm border border-white/5 min-h-[600px] flex flex-col relative overflow-hidden">
+              <div className="bg-[#112244] p-8 md:p-16 rounded-sm shadow-sm border border-white/5 min-h-[600px] flex flex-col relative overflow-hidden">
                 <form onSubmit={handleSubmit} className="flex-1 flex flex-col">
                   <AnimatePresence mode="wait">
                     {step === 1 && (
@@ -241,11 +241,11 @@ const Contact = () => {
                     ) : <div />}
 
                     {step < 3 ? (
-                      <button type="button" onClick={nextStep} className="bg-[#111111] text-gray-100 px-8 py-3 rounded-sm flex items-center gap-3 font-sans text-[10px] font-bold uppercase tracking-widest hover:bg-[#c2a15b] transition-all duration-300 shadow-md">
+                      <button type="button" onClick={nextStep} className="bg-[#0D1A26] text-gray-100 px-8 py-3 rounded-sm flex items-center gap-3 font-sans text-[10px] font-bold uppercase tracking-widest hover:bg-[#C9BFA3] transition-all duration-300 shadow-md">
                         Continue <ChevronRight size={14} />
                       </button>
                     ) : (
-                      <button type="submit" disabled={submitting} className="bg-[#c2a15b] text-gray-100 px-8 py-3 rounded-sm flex items-center gap-3 font-sans text-[10px] font-bold uppercase tracking-widest hover:bg-[#111111] transition-all duration-300 shadow-lg disabled:opacity-50">
+                      <button type="submit" disabled={submitting} className="bg-[#C9BFA3] text-gray-100 px-8 py-3 rounded-sm flex items-center gap-3 font-sans text-[10px] font-bold uppercase tracking-widest hover:bg-[#0D1A26] transition-all duration-300 shadow-lg disabled:opacity-50">
                         {submitting ? "Sending..." : <>Complete Inquiry <Send size={14} /></>}
                       </button>
                     )}

@@ -15,7 +15,7 @@ const Gallery = () => {
   return (
     <main className="pb-24 overflow-hidden">
       {/* Hero Header */}
-      <header className="relative min-h-[60vh] flex items-center overflow-hidden bg-[#111111] mb-16">
+      <header className="relative min-h-[60vh] flex items-center overflow-hidden bg-[#0D1A26] mb-16">
         <div className="absolute inset-0 z-0">
           <img
             alt="Gallery background"
@@ -25,16 +25,16 @@ const Gallery = () => {
             decoding="async"
             fetchPriority="high"
           />
-          <div className="absolute inset-0 bg-[#111111]/60 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-[#0D1A26]/60 mix-blend-multiply"></div>
         </div>
 
         <div className="relative z-10 container mx-auto px-6 max-w-5xl text-center py-20 mt-16">
           <ScrollReveal>
-            <p className="font-sans text-[10px] sm:text-xs font-semibold uppercase tracking-[0.3em] text-[#c2a15b] mb-6">
+            <p className="font-sans text-[10px] sm:text-xs font-semibold uppercase tracking-[0.3em] text-[#C9BFA3] mb-6">
               Archive of Excellence
             </p>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-sans text-gray-100 leading-tight mb-8">
-              Curated <span className="font-serif italic font-normal text-[#c2a15b]">Moments</span>
+              Curated <span className="font-serif italic font-normal text-[#C9BFA3]">Moments</span>
             </h1>
             <p className="text-gray-100/70 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
               A visual journey through our most distinguished celebrations, from intimate
@@ -55,7 +55,7 @@ const Gallery = () => {
               <ScrollReveal key={img.src + img.category + i} delay={(i % 3) * 0.08}>
                 <button
                   onClick={() => setLightbox(img.src)}
-                  className="group relative block w-full aspect-square overflow-hidden bg-[#111111]/5 focus:outline-none"
+                  className="group relative block w-full aspect-square overflow-hidden bg-[#0D1A26]/5 focus:outline-none"
                 >
                   <img
                     src={img.src}
@@ -65,7 +65,7 @@ const Gallery = () => {
                     className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
                   />
                   {/* Subtle overlay */}
-                  <div className="absolute inset-0 bg-[#111111]/0 group-hover:bg-[#111111]/10 transition-colors duration-500" />
+                  <div className="absolute inset-0 bg-[#0D1A26]/0 group-hover:bg-[#0D1A26]/10 transition-colors duration-500" />
                 </button>
               </ScrollReveal>
             ))}

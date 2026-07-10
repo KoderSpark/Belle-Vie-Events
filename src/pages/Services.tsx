@@ -11,7 +11,7 @@ const Services = () => {
   return (
     <main className="pb-20 overflow-hidden bg-background">
       {/* Hero Header */}
-      <header className="relative min-h-[70vh] flex items-center overflow-hidden bg-[#111111] mb-24">
+      <header className="relative min-h-[70vh] flex items-center overflow-hidden bg-[#0D1A26] mb-24">
         <div className="absolute inset-0 z-0">
           <img
             alt="Luxurious event hosting"
@@ -21,19 +21,19 @@ const Services = () => {
             decoding="async"
             fetchPriority="high"
           />
-          <div className="absolute inset-0 bg-[#111111]/60 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-[#0D1A26]/60 mix-blend-multiply"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full py-20 mt-16">
           <ScrollReveal>
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12">
               <div className="max-w-2xl">
-                <span className="text-[#c2a15b] font-sans uppercase tracking-[0.2em] text-xs font-semibold mb-4 block">
+                <span className="text-[#C9BFA3] font-sans uppercase tracking-[0.2em] text-xs font-semibold mb-4 block">
                   Our Expertise
                 </span>
                 <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif tracking-tight leading-tight mb-0 text-gray-100">
                   The Art of <br />
-                  <span className="italic text-[#c2a15b]">Exceptional</span> Hosting
+                  <span className="italic text-[#C9BFA3]">Exceptional</span> Hosting
                 </h1>
               </div>
               <p className="text-gray-100/70 font-sans text-lg max-w-md pb-2 lg:border-l lg:border-white/20 lg:pl-8 leading-relaxed">
@@ -60,12 +60,12 @@ const Services = () => {
                 />
               </div>
               {/* Asymmetric Decorative Element */}
-              <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-[#0a0a0a] opacity-50 -z-10 rounded-sm" />
+              <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-[#112244] opacity-50 -z-10 rounded-sm" />
             </ScrollReveal>
           </div>
           <div className="w-full md:w-1/2 space-y-8">
             <ScrollReveal direction="right" delay={0.1}>
-              <div className="inline-flex items-center gap-4 text-[#c2a15b]">
+              <div className="inline-flex items-center gap-4 text-[#C9BFA3]">
                 <span className="h-[1px] w-8 bg-current"></span>
                 <span className="font-sans uppercase tracking-widest text-xs font-semibold">
                   Category 01
@@ -82,22 +82,22 @@ const Services = () => {
               </p>
               <ul className="space-y-4 pt-4">
                 <li className="flex items-center gap-4 text-gray-100">
-                  <CheckCircle className="text-[#c2a15b] w-5 h-5 flex-shrink-0" />
+                  <CheckCircle className="text-[#C9BFA3] w-5 h-5 flex-shrink-0" />
                   <span className="font-sans">Curated Venue Selection &amp; Negotiations</span>
                 </li>
                 <li className="flex items-center gap-4 text-gray-100">
-                  <CheckCircle className="text-[#c2a15b] w-5 h-5 flex-shrink-0" />
+                  <CheckCircle className="text-[#C9BFA3] w-5 h-5 flex-shrink-0" />
                   <span className="font-sans">Comprehensive Vendor Orchestration</span>
                 </li>
                 <li className="flex items-center gap-4 text-gray-100">
-                  <CheckCircle className="text-[#c2a15b] w-5 h-5 flex-shrink-0" />
+                  <CheckCircle className="text-[#C9BFA3] w-5 h-5 flex-shrink-0" />
                   <span className="font-sans">Seamless Day-of Production Management</span>
                 </li>
               </ul>
               <div className="pt-8">
                 <Link
                   to="/contact"
-                  className="border-b border-[#c2a15b]/40 pb-1 text-[#c2a15b] font-sans font-semibold uppercase tracking-widest text-sm hover:border-[#c2a15b] transition-colors inline-flex items-center gap-2 group"
+                  className="border-b border-[#C9BFA3]/40 pb-1 text-[#C9BFA3] font-sans font-semibold uppercase tracking-widest text-sm hover:border-[#C9BFA3] transition-colors inline-flex items-center gap-2 group"
                 >
                   Enquire Now
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -109,11 +109,11 @@ const Services = () => {
       </section>
 
       {/* Service Section 2: Gourmet Catering (Inverted Layout) */}
-      <section className="py-24 bg-[#080808] mb-32 lg:mb-40">
+      <section className="py-24 bg-[#0D1A26] mb-32 lg:mb-40">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row-reverse items-center gap-12 lg:gap-24">
           <div className="w-full md:w-1/2 relative">
             <ScrollReveal direction="right">
-              <div className="aspect-[16/10] bg-[#0a0a0a] rounded-sm overflow-hidden shadow-sm">
+              <div className="aspect-[16/10] bg-[#112244] rounded-sm overflow-hidden shadow-sm">
                 <img
                   alt="Gourmet Catering"
                   className="w-full h-full object-cover"
@@ -123,7 +123,7 @@ const Services = () => {
                 />
               </div>
               {/* Overlaid small detail image */}
-              <div className="absolute -top-12 -left-12 w-40 h-40 hidden md:block border-4 border-[#f6f3ed] overflow-hidden shadow-lg bg-card z-10">
+              <div className="absolute -top-12 -left-12 w-40 h-40 hidden md:block border-4 border-[#F5F0E6] overflow-hidden shadow-lg bg-card z-10">
                 <img
                   alt="Detail"
                   className="w-full h-full object-cover"
@@ -136,7 +136,7 @@ const Services = () => {
           </div>
           <div className="w-full md:w-1/2 space-y-8">
             <ScrollReveal direction="left" delay={0.1}>
-              <div className="inline-flex items-center gap-4 text-[#c2a15b]">
+              <div className="inline-flex items-center gap-4 text-[#C9BFA3]">
                 <span className="h-[1px] w-8 bg-current"></span>
                 <span className="font-sans uppercase tracking-widest text-xs font-semibold">
                   Category 02
@@ -150,13 +150,13 @@ const Services = () => {
                 create a dining experience that lingers long after the last bite.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
-                <div className="p-6 bg-[#0a0a0a] rounded-sm shadow-sm border border-white/5">
+                <div className="p-6 bg-[#112244] rounded-sm shadow-sm border border-white/5">
                   <h4 className="font-serif text-lg mb-2 text-gray-100">Tasting Menus</h4>
                   <p className="text-sm text-gray-100/60 font-sans leading-relaxed">
                     Multi-course journeys through seasonal flavors.
                   </p>
                 </div>
-                <div className="p-6 bg-[#0a0a0a] rounded-sm shadow-sm border border-white/5">
+                <div className="p-6 bg-[#112244] rounded-sm shadow-sm border border-white/5">
                   <h4 className="font-serif text-lg mb-2 text-gray-100">Mixology</h4>
                   <p className="text-sm text-gray-100/60 font-sans leading-relaxed">
                     Artisanal cocktails curated for your theme.
@@ -166,7 +166,7 @@ const Services = () => {
               <div className="pt-8">
                 <Link
                   to="/contact"
-                  className="inline-flex bg-[#111111] text-gray-200 px-8 py-4 rounded-sm font-sans font-semibold uppercase tracking-widest text-sm hover:opacity-90 active:scale-95 transition-all"
+                  className="inline-flex bg-[#0D1A26] text-gray-200 px-8 py-4 rounded-sm font-sans font-semibold uppercase tracking-widest text-sm hover:opacity-90 active:scale-95 transition-all"
                 >
                   Enquire Now
                 </Link>
@@ -182,7 +182,7 @@ const Services = () => {
           <div className="flex flex-col md:flex-row gap-12 lg:gap-16 items-start">
             <div className="w-full md:w-1/3 space-y-8">
               <ScrollReveal direction="up">
-                <div className="inline-flex items-center gap-4 text-[#c2a15b]">
+                <div className="inline-flex items-center gap-4 text-[#C9BFA3]">
                   <span className="h-[1px] w-8 bg-current"></span>
                   <span className="font-sans uppercase tracking-widest text-xs font-semibold">
                     Category 03
@@ -200,18 +200,18 @@ const Services = () => {
                 <div className="pt-4">
                   <Link
                     to="/gallery"
-                    className="border-b border-[#c2a15b]/40 pb-1 text-[#c2a15b] font-sans font-semibold uppercase tracking-widest text-sm hover:border-[#c2a15b] transition-colors inline-flex items-center gap-2 group"
+                    className="border-b border-[#C9BFA3]/40 pb-1 text-[#C9BFA3] font-sans font-semibold uppercase tracking-widest text-sm hover:border-[#C9BFA3] transition-colors inline-flex items-center gap-2 group"
                   >
                     Explore Portfolio
                     <BookOpen className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
-                <div className="mt-12 p-8 border border-white/10 rounded-sm bg-[#050505]/50">
+                <div className="mt-12 p-8 border border-white/10 rounded-sm bg-[#0D1A26]/50">
                   <p className="italic font-serif text-xl text-gray-100 leading-relaxed">
                     "The flowers were not just part of the room; they were the
                     conversation itself."
                   </p>
-                  <p className="mt-4 font-sans uppercase tracking-[0.15em] text-xs text-[#c2a15b] font-semibold">
+                  <p className="mt-4 font-sans uppercase tracking-[0.15em] text-xs text-[#C9BFA3] font-semibold">
                     — Julianne V., Private Client
                   </p>
                 </div>
@@ -248,8 +248,8 @@ const Services = () => {
       {/* Final Call to Action */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8 mb-32 lg:mb-40">
         <ScrollReveal>
-          <div className="bg-[#0a0a0a] p-10 md:p-24 text-center rounded-xl relative overflow-hidden">
-            <div className="absolute inset-0 bg-[#c2a15b] opacity-[0.03] pointer-events-none"></div>
+          <div className="bg-[#112244] p-10 md:p-24 text-center rounded-xl relative overflow-hidden">
+            <div className="absolute inset-0 bg-[#C9BFA3] opacity-[0.03] pointer-events-none"></div>
             <h2 className="text-4xl md:text-5xl font-serif text-gray-100 mb-6 relative z-10">
               Begin Your Journey
             </h2>
@@ -260,13 +260,13 @@ const Services = () => {
             <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
               <Link
                 to="/contact"
-                className="bg-[#111111] text-gray-200 px-10 py-4 rounded-sm font-sans font-semibold uppercase tracking-widest text-sm hover:opacity-90 transition-all text-center border border-white/20 block"
+                className="bg-[#0D1A26] text-gray-200 px-10 py-4 rounded-sm font-sans font-semibold uppercase tracking-widest text-sm hover:opacity-90 transition-all text-center border border-white/20 block"
               >
                 Request a Proposal
               </Link>
               <Link
                 to="/services"
-                className="border border-white/20 text-gray-100 px-10 py-4 rounded-sm font-sans font-semibold uppercase tracking-widest text-sm hover:bg-[#0a0a0a]/50 transition-all text-center block"
+                className="border border-white/20 text-gray-100 px-10 py-4 rounded-sm font-sans font-semibold uppercase tracking-widest text-sm hover:bg-[#112244]/50 transition-all text-center block"
               >
                 View Packages
               </Link>

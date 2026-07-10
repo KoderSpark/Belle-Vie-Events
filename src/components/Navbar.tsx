@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/new_logo.png";
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -29,15 +29,15 @@ const Navbar = () => {
   const glassClass = isTop ? "glass-dark" : "glass-strong";
   const textClass = isTop ? "text-gray-100" : "text-gray-100";
   const mutedTextClass = isTop ? "text-gray-100/70" : "text-soft-gray";
-  const activeBgClass = isTop ? "bg-[#0a0a0a]/10" : "bg-[#0a0a0a]";
+  const activeBgClass = isTop ? "bg-[#112244]/10" : "bg-[#112244]";
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4 transition-all duration-500">
       <nav className={`flex items-center gap-8 ${glassClass} rounded-full px-8 py-3 shadow-sm transition-all duration-500`}>
         {/* Brand */}
-        <Link to="/" className={`flex items-center font-serif text-xl font-semibold tracking-tight ${textClass} mr-4 transition-colors`}>
-          <img src={logo} alt="haus of veloura logo" className="w-10 h-10 rounded-sm mr-3 object-cover" />
-          <span>haus of veloura</span>
+        <Link to="/" className={`flex items-center font-serif text-xl md:text-2xl font-light tracking-[0.2em] uppercase mr-4 transition-colors`}>
+          <img src={logo} alt="Haus of Veloura Logo" className="w-14 h-14 rounded-full mr-4 object-cover shadow-sm border border-[#C9BFA3]/30" />
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#C9BFA3] to-[#E8DFC8]">Haus of Veloura</span>
         </Link>
 
         {/* Desktop Links */}

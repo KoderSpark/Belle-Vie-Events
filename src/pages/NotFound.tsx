@@ -9,9 +9,9 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#111111] text-gray-100 px-6">
+    <div className="flex min-h-screen items-center justify-center bg-[#0D1A26] text-gray-100 px-6">
       <div className="text-center max-w-lg">
-        <h1 className="mb-6 text-7xl md:text-8xl font-serif text-[#c2a15b]">404</h1>
+        <h1 className="mb-6 text-7xl md:text-8xl font-serif text-[#C9BFA3]">404</h1>
         <h2 className="text-2xl md:text-3xl font-serif italic mb-6">Page Not Found</h2>
         <p className="mb-10 text-gray-100/60 font-sans leading-relaxed">
           The celebration you're looking for might have moved, or the invitation has expired. 
@@ -19,7 +19,7 @@ const NotFound = () => {
         </p>
         <a 
           href="/" 
-          className="inline-block bg-[#c2a15b] text-gray-100 px-10 py-4 rounded-sm font-sans tracking-widest uppercase text-xs font-semibold hover:opacity-90 transition-all"
+          className="inline-block bg-[#C9BFA3] text-gray-100 px-10 py-4 rounded-sm font-sans tracking-widest uppercase text-xs font-semibold hover:opacity-90 transition-all"
         >
           Return to Home
         </a>
