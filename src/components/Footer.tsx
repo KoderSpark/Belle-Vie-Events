@@ -135,7 +135,7 @@ const Footer = () => {
                   </li>
                   <li className="flex items-center justify-center md:justify-start gap-4">
                     <Mail className="w-4 h-4 text-[#C9BFA3] shrink-0 opacity-80" />
-                    <a href="mailto:hausofvelourabykp@gmail.com" className="text-[#F5F0E6]/80 hover:text-[#C9BFA3] transition-colors">hausofvelourabykp@gmail.com</a>
+                    <a href="mailto:hausofvelourabyjp@gmail.com" className="text-[#F5F0E6]/80 hover:text-[#C9BFA3] transition-colors">hausofvelourabyjp@gmail.com</a>
                   </li>
                   <li className="flex items-center justify-center md:justify-start gap-4">
                     <Phone className="w-4 h-4 text-[#C9BFA3] shrink-0 opacity-80" />

@@ -177,7 +177,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onFinish }) => {
 
             {/* Inner Floating Emblem */}
             <div className="relative flex flex-col items-center justify-center text-[#C9BFA3] animate-pulse-glow">
-              <img src={logo} alt="Haus Of Veloura By JP Logo" className="w-20 h-20 rounded-full object-cover shadow-sm border border-[#C9BFA3]/30" />
+              <img src={logo} alt="Haus Of Veloura By JP Logo" className="w-28 h-28 rounded-full object-cover shadow-sm border border-[#C9BFA3]/30" />
             </div>
           </div>
 
