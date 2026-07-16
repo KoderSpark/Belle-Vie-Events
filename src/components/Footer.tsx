@@ -100,7 +100,7 @@ const Footer = () => {
                 </p>
                 <div className="flex gap-4">
                   {[
-                    { Icon: Instagram, href: "https://www.instagram.com/hausofvelourabykp?igsh=MWMwaDV2ZGY5MXQwdg%3D%3D&utm_source=qr" },
+                    { Icon: Instagram, href: "https://www.instagram.com/hausofvelourabyjp?igsh=MWMwaDV2ZGY5MXQwdg%3D%3D&utm_source=qr" },
                     { Icon: Facebook, href: "#" },
                     { Icon: Linkedin, href: "#" }
                   ].map((s, idx) => (
