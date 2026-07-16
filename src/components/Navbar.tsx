@@ -37,7 +37,7 @@ const Navbar = () => {
         {/* Brand */}
         <Link to="/" className={`flex items-center font-serif text-[10px] min-[375px]:text-xs sm:text-sm md:text-xl lg:text-2xl font-light tracking-wider md:tracking-[0.2em] uppercase mr-2 md:mr-4 transition-colors overflow-hidden`}>
           <img src={logo} alt="Haus Of Veloura By JP Logo" className="w-9 h-9 sm:w-10 sm:h-10 md:w-14 md:h-14 rounded-full mr-2 md:mr-4 object-cover shadow-sm border border-[#C9BFA3]/30 shrink-0" />
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#C9BFA3] to-[#E8DFC8] whitespace-nowrap">Haus Of Veloura By JP</span>
+          <span className="text-white whitespace-nowrap">Haus Of Veloura By JP</span>
         </Link>
 
         {/* Desktop Links */}

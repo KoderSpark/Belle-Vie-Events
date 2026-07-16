@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, UtensilsCrossed, Wine } from 'lucide-react';
+import logo from "@/assets/new_logo.png";
 
 interface LoadingScreenProps {
   onFinish?: () => void;
@@ -177,20 +177,11 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onFinish }) => {
 
             {/* Inner Floating Emblem */}
             <div className="relative flex flex-col items-center justify-center text-[#C9BFA3] animate-pulse-glow">
-              <Wine strokeWidth={1} className="w-14 h-14 mb-2 opacity-90" />
-              <div className="flex gap-3 items-center">
-                <div className="w-4 h-[1px] bg-[#C9BFA3]/50" />
-                <UtensilsCrossed strokeWidth={1} className="w-5 h-5 opacity-70" />
-                <Sparkles strokeWidth={1.5} className="w-4 h-4 opacity-90" />
-                <div className="w-4 h-[1px] bg-[#C9BFA3]/50" />
-              </div>
+              <img src={logo} alt="Haus Of Veloura By JP Logo" className="w-20 h-20 rounded-full object-cover shadow-sm border border-[#C9BFA3]/30" />
             </div>
           </div>
 
-          {/* Brand Name */}
-          <h1 className="text-4xl md:text-5xl font-serif-premium tracking-wide mb-6 text-center">
-            <span className="gold-gradient-text uppercase text-2xl font-light tracking-[0.2em]">Haus Of Veloura By JP</span>
-          </h1>
+
 
           {/* Dynamic Loading Message with Elegant Tracking */}
           <div className="h-8 relative overflow-hidden w-full flex justify-center mb-8 font-sans-elegant">
